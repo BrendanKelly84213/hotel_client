@@ -1,1 +1,27 @@
-PAYMENTS
+<form>
+    <label class="mr-sm-2" for="reservation">Reservation</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="reservation">
+        <option selected>Choose...</option>
+        <option value="1">Reservation from B. Dybała</option>
+        <option value="2">Reservation from M. Skulimowski</option>
+        <option value="3">Reservation from W. Śmigowski</option>
+        <option value="4">Reservation from P. Wojasiński</option>
+    </select>
+
+
+    <br/>
+    <label>Payment type: </label>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="cashPayment"> cash
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="cardPayment"> card
+        </label>
+    </div>
+    <input class="form-control" type="text" value="54 PLN" readonly>
+
+    <button type="submit" class="btn btn-primary"> Submit payment</button>
+</form>
