@@ -1,1 +1,40 @@
-RESERVATIONS
+<form>
+
+    <div class="form-group row">
+        <label for="since" class="col-10 col-form-label">Since</label>
+        <div class="col-10">
+            <input class="form-control" type="date" value="2011-08-19" id="since">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="upTo" class="col-10 col-form-label">Up To</label>
+        <div class="col-10">
+            <input class="form-control" type="date" value="2011-08-19" id="upTo">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="customers">Customers</label>
+        <select multiple class="form-control" id="customers">
+            <option>B. Dybała</option>
+            <option>M. Skulimowski</option>
+            <option>W. Śmigowski</option>
+            <option>P. Wojasiński</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="rooms">Rooms</label>
+        <select multiple class="form-control" id="rooms">
+            <option>Room nr 1</option>
+            <option>Room nr 2</option>
+            <option>Room nr 3</option>
+            <option>Room nr 4</option>
+        </select>
+    </div>
+
+    <label for="price">Price</label>
+    <input class="form-control" id="price" type="text" value="54 PLN" readonly>
+
+    <button type="submit" class="btn btn-primary"> Submit reservation</button>
+</form>
