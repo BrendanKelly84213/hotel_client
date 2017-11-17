@@ -1,1 +1,25 @@
-ROOMS
+<table class="table">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Room number</th>
+        <th>Capacity</th>
+        <th>Room type</th>
+        <th>Room status</th>
+        <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="r in rooms">
+        <th>{{r.id}}</th>
+        <th>{{r.number}}</th>
+        <td>{{r.capacity}}</td>
+        <td>{{r.roomType}}</td>
+        <td>{{r.roomStatus}}</td>
+        <td>
+            <a class="btn btn-info">Prices</a>
+            <a class="btn btn-warning">Reservations</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

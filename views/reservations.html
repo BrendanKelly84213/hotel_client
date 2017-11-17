@@ -1,1 +1,26 @@
-RESERVATIONS
+<table class="table">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Status</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Price</th>
+        <th>Room</th>
+        <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="r in reservations">
+        <th>{{r.id}}</th>
+        <th>{{r.status}}</th>
+        <td>{{r.from}}</td>
+        <td>{{r.to}}</td>
+        <td>{{r.price}}</td>
+        <td>{{r.room}}</td>
+        <td>
+            <a class="btn btn-info">Customer</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
