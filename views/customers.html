@@ -14,8 +14,8 @@
         <th>{{c.id}}</th>
         <td>{{c.name}}</td>
         <td>{{c.surname}}</td>
-        <td>{{c.birthday}}</td>
-        <td>{{c.identityCard}}</td>
+        <td>{{c.birthday | date}}</td>
+        <td>{{c.identityCard.idCardNumber}}</td>
         <td>
             <a class="btn btn-info">Reservations</a>
             <a class="btn btn-warning">Add payment</a>

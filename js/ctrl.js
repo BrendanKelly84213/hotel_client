@@ -10,57 +10,16 @@
 
     app.controller('ctrl', ctrl);
 
-    ctrl.$inject = ['$scope'];
+    ctrl.$inject = ['$scope', 'dataFactory'];
 
-    function ctrl($scope) {
+    function ctrl($scope, dataFactory) {
         $scope.test = 'Welcome to hotel app. Use the menu above to nagivate.';
-        $scope.customers = [
-        {
-            "id": 1,
-            "name": "Jacek",
-            "surname": "Kowalski",
-            "birthday": "27/01/1994",
-            "identityCard": "AUR287543"
-        },
-        {
-            "id": 2,
-            "name": "Janek",
-            "surname": "Kowalski",
-            "birthday": "21/01/1994",
-            "identityCard": "AUR287346"
-        },
-        {
-            "id": 3,
-            "name": "Andrzej",
-            "surname": "Kowalski",
-            "birthday": "22/01/1994",
-            "identityCard": "AUR287597"
-        }
-        ];
 
-        $scope.rooms = [
-            {
-                "id": 1,
-                "number": "101",
-                "capacity": 2,
-                "roomType": "twin room",
-                "roomStatus": "free"
-            },
-            {
-                "id": 2,
-                "number": "102",
-                "capacity": 1,
-                "roomType": "single room",
-                "roomStatus": "occupied"
-            },
-            {
-                "id": 3,
-                "number": "103",
-                "capacity": 6,
-                "roomType": "dormitory",
-                "roomStatus": "to clean"
-            }
-        ]
+        $scope.customers;
+        getCustomers();
+
+        $scope.rooms;
+        getRooms();
 
         $scope.payments = [
             {
@@ -117,6 +76,22 @@
             }
         ]
 
+        function getCustomers() {
+            dataFactory.getCustomers()
+                .then(function (response) {
+                    $scope.customers = response.data;
+                }, function (error) {
+                    console.log('UNABLE TO get customers!');
+                })
+        }
+        function getRooms() {
+            dataFactory.getRooms()
+                .then(function (response) {
+                    $scope.rooms = response.data;
+                }, function (error) {
+                    console.log('UNABLE TO get rooms!');
+                })
+        }
     }
 
 })();
