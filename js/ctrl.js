@@ -105,6 +105,14 @@
                     // TODO dialog -> error
                 })
         }
+        $scope.addRoom = function (room) {
+            dataFactory.addRoom(room)
+                .then(function (response) {
+                    // TODO dialog -> Data added
+                }, function (error) {
+                    // TODO dialog -> error
+                })
+        }
     }
 
 })();

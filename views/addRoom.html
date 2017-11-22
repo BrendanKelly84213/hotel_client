@@ -2,12 +2,11 @@
     <div class="form-group row">
         <label for="number" class="col-10 col-form-label">Room Number</label>
         <div class="col-10">
-            <input class="form-control" type="text" placeholder="Room number" id="number">
+            <input class="form-control" type="text" placeholder="Room number" id="number" ng-model="roomToAdd.number">
         </div>
     </div>
     <label class="mr-sm-2" for="capacity">Capacity</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="capacity">
-        <option selected>Choose...</option>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="capacity" ng-model="roomToAdd.capacity">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -19,32 +18,32 @@
     <label>Room type: </label>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="singleRoom" value="singleRoom"> single room
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="singleRoom" value="SINGLE_ROOM" ng-model="roomToAdd.roomType"> single room
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="twinRoom" value="twinRoom"> twin room
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="twinRoom" value="TWIN_ROOM" ng-model="roomToAdd.roomType"> twin room
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="doubleRoom" value="doubleRoom"> double room
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="doubleRoom" value="DOUBLE_ROOM" ng-model="roomToAdd.roomType"> double room
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="triple" value="triple"> triple
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="triple" value="TRIPLE" ng-model="roomToAdd.roomType"> triple
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="quad" value="quad"> quad
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="quad" value="QUAD" ng-model="roomToAdd.roomType"> quad
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="dormitory" value="dormitory"> dormitory
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="dormitory" value="DORMITORY" ng-model="roomToAdd.roomType"> dormitory
         </label>
     </div>
 
@@ -52,25 +51,25 @@
     <label>Room status: </label>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="free" value="free"> free
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="free" value="FREE" ng-model="roomToAdd.roomStatus"> free
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="toClean" value="toClean"> to clean
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="toClean" value="TO_CLEAN" ng-model="roomToAdd.roomStatus"> to clean
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reserved" value="reserved"> reserved
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reserved" value="RESERVED" ng-model="roomToAdd.roomStatus"> reserved
         </label>
     </div>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="occupied" value="occupied"> occupied
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="occupied" value="OCCUPIED" ng-model="roomToAdd.roomStatus"> occupied
         </label>
     </div>
 
     <br/>
-    <button type="submit" class="btn btn-primary"> Add new room</button>
+    <button type="submit" class="btn btn-primary" ng-click="addRoom(roomToAdd)"> Add new room</button>
 </form>
