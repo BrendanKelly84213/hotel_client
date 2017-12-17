@@ -4,7 +4,7 @@
     var app = angular.module('app')
         .factory('dataFactory', ['$http', function ($http) {
 
-            var urlBase = 'http://192.168.0.227:8080';
+            var urlBase = 'http://localhost:8080';
             var urlBaseCustomers = urlBase + '/api/customers';
             var urlBaseRoom = urlBase + '/api/rooms';
             var urlBasePrice = urlBase + '/api/prices';

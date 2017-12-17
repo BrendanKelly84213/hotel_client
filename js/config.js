@@ -10,7 +10,7 @@
 
                 var main = {
                     name: 'main',
-                    url: '',
+                    url: '/',
                     templateUrl: 'views/main.html'
                 };
 
@@ -40,7 +40,8 @@
                 var customers = {
                     name: 'customers',
                     url: '/customers',
-                    templateUrl: 'views/customers.html'
+                    templateUrl: 'views/customers.html',
+                    controller: 'customerCtrl'
                 };
 
                 var login = {
