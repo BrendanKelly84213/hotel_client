@@ -4,7 +4,7 @@
     var app = angular.module('app')
         .factory('dataFactory', ['$http', function ($http) {
 
-            var urlBase = 'http://192.168.0.227:8080';
+            var urlBase = 'http://192.168.43.113:8090';
             var urlBaseCustomers = urlBase + '/api/customers';
             var urlBaseRoom = urlBase + '/api/rooms';
             var urlBasePrice = urlBase + '/api/prices';
@@ -45,6 +45,29 @@
             dataFactory.deleteRoom = function (id) {
                 return $http.delete(urlBaseRoom + '/' + id);
             };
+
+
+            // RESERVATIONS
+            dataFactory.getReservations= function(){
+                return $http.get(urlBaseReservation);
+            };
+
+            dataFactory.getReservation = function(id){
+                return $http.get(urlBaseReservation + '/' +id);
+            };
+
+            dataFactory.addReservation = function (reservation) {
+                return $http.post(urlBaseReservation, reservation);
+            };
+            dataFactory.editReservation = function (reservation) {
+                return $http.post(urlBaseReservation, reservation);
+            };
+            dataFactory.deleteReservation = function (id) {
+                return $http.delete(urlBaseReservation + '/' + id);
+            };
+
+            //
+
 
             return dataFactory;
 

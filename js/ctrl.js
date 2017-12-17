@@ -46,35 +46,8 @@
 
         ]
 
-        $scope.reservations = [
-            {
-                "id": 1,
-                "status": "OK",
-                "from": "26/11/2017",
-                "to": "28/11/2017",
-                "price": 217,
-                "room": "101"
-
-            },
-            {
-                "id": 2,
-                "status": "OK",
-                "from": "12/12/2017",
-                "to": "26/12/2017",
-                "price": 96,
-                "room": "103"
-
-            },
-            {
-                "id": 3,
-                "status": "OK",
-                "from": "14/01/2018",
-                "to": "22/01/2018",
-                "price": 195,
-                "room": "102"
-
-            }
-        ]
+        $scope.reservations;
+        getReservations();
 
         function getCustomers() {
             dataFactory.getCustomers()
@@ -112,7 +85,27 @@
                 }, function (error) {
                     // TODO dialog -> error
                 })
+        };
+
+
+
+        function getReservations(){
+            dataFactory.getReservations()
+                .then(function(response){
+                    $scope.reservations = response.data;
+                }, function(error){
+                    //
+                })
         }
+        $scope.addReservation = function (reservation){
+            dataFactory.addReservation(reservation).then(function (response){
+
+            }, function(error){
+
+            })
+        };
     }
+
+
 
 })();
