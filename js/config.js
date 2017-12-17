@@ -17,7 +17,8 @@
                 var addCustomer = {
                     name: 'addCustomer',
                     url: '/addCustomer',
-                    templateUrl: 'views/addCustomer.html'
+                    templateUrl: 'views/addCustomer.html',
+                    controller: 'customerCtrl'
                 };
 
                 var addPayment = {

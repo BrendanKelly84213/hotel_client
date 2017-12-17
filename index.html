@@ -27,33 +27,36 @@
 </head>
 <body ng-app="app" ng-controller="ctrl">
 <div class="container">
-    <div class="row">
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Hotel App</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Hotel App</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link"ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="addReservation" ui-sref-active="active">addReservation</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="customers" ui-sref-active="active">customers</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="login" ui-sref-active="active">login</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="payments" ui-sref-active="active">payments</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="reservations" ui-sref-active="active">reservations</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="rooms" ui-sref-active="active">rooms</a></li>
+            </ul>
+        </div>
+    </nav>
 
-                    <li class="nav-item"><a class="nav-link"ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="addReservation" ui-sref-active="active">addReservation</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="customers" ui-sref-active="active">customers</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="login" ui-sref-active="active">login</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="payments" ui-sref-active="active">payments</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="reservations" ui-sref-active="active">reservations</a></li>
-                    <li class="nav-item"><a class="nav-link"ui-sref="rooms" ui-sref-active="active">rooms</a></li>
-                </ul>
-            </div>
-        </nav>
-
+    <div id="content" class="row element no-gutters">
+        <div class="col-12">
+            <ui-view>
+                <img src="resources/img/loading.gif"/>
+            </ui-view>
+        </div>
     </div>
-    <div id="content" class="row">
-        <ui-view>
-            <img src="resources/img/loading.gif"/>
-        </ui-view>
-
+    <div class="row mt-5 footer no-gutters">
+        <div class="col-12">
+            <p class="text-center">Created using Bootstrap 4</p>
+        </div>
     </div>
 </div>
 
