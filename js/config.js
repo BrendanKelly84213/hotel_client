@@ -30,7 +30,13 @@
                 var addReservation = {
                     name: 'addReservation',
                     url: '/addReservation',
-                    templateUrl: 'views/addReservation.html'
+                    params: {
+                        id: null,
+                        name: null,
+                        surname: null
+                    },
+                    templateUrl: 'views/addReservation.html',
+                    controller: 'newReservationCtrl'
                 };
                 var addRoom = {
                     name: 'addRoom',
@@ -66,7 +72,8 @@
                 var rooms = {
                     name: 'rooms',
                     url: '/rooms',
-                    templateUrl: 'views/rooms.html'
+                    templateUrl: 'views/rooms.html',
+                    controller: 'roomCtrl'
                 };
 
                 $stateProvider.state(main);

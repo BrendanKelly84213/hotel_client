@@ -13,6 +13,19 @@
             var dataFactory = {};
 
             // CUSTOMERS
+            dataFactory.searchCustomers = function(name, surname, cardNo) {
+                var url = urlBaseCustomers + "?search=";
+
+                if (name != null)
+                    url += "name:" + name + ",";
+                if (surname != null)
+                    url += "surname:" + surname + ",";
+                if (cardNo != null)
+                    url += "idCardNumber:" + cardNo;
+
+                return $http.get(url);
+            };
+
             dataFactory.getCustomers = function () {
                 return $http.get(urlBaseCustomers);
             };

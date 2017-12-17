@@ -6,9 +6,9 @@
 
     app.controller('customerCtrl', customerCtrl);
 
-    customerCtrl.$inject = ['$scope', 'dataFactory'];
+    customerCtrl.$inject = ['$scope', 'dataFactory', '$state'];
 
-    function customerCtrl($scope, dataFactory) {
+    function customerCtrl($scope, dataFactory, $state) {
         this.customers = getCustomers();
 
         $scope.refresh = function () {
@@ -16,8 +16,18 @@
             this.customers = getCustomers();
         };
 
-        $scope.searchCustomer = function () {
-            console.log("Looking for customer");
+        $scope.addReservation = function (id, name, surname) {
+            console.log(id, name, surname);
+            $state.go('addReservation', { id: id, name: name, surname: surname});
+        };
+        
+        $scope.searchCustomer = function (name, surname, cardNo) {
+            dataFactory.searchCustomers(name, surname, cardNo)
+                .then(function (response) {
+                    $scope.customers = response.data;
+                }, function (error) {
+                    console.log('Unable to get customers list!');
+                })
         };
 
         function getCustomers() {
@@ -42,8 +52,6 @@
                 }
             };
 
-            console.log("Adding customer: ");
-            console.log(customer);
             dataFactory.addCustomer(customer)
                 .then(function (response) {
                     $scope.result = response.message;
