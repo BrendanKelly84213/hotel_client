@@ -32,6 +32,25 @@
                 }, function (error) {
                     // TODO dialog -> error
                 })
-        }*/
+        };
+
+
+
+        function getReservations(){
+            dataFactory.getReservations()
+                .then(function(response){
+                    $scope.reservations = response.data;
+                }, function(error){
+                    //
+                })
+        }
+        $scope.addReservation = function (reservation){
+            dataFactory.addReservation(reservation).then(function (response){
+
+            }, function(error){
+
+            })
+        };
     }
+
 })();

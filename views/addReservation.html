@@ -15,21 +15,26 @@
 
     <div class="form-group">
         <label for="customers">Customers</label>
-        <select multiple class="form-control" id="customers">
-            <option>B. Dybała</option>
-            <option>M. Skulimowski</option>
-            <option>W. Śmigowski</option>
-            <option>P. Wojasiński</option>
+        <select class="form-control"
+                ng-model="selected.available"
+                ng-options="c.name + ' ' +c.surname for c in customers"
+                id="customers"
+                multiple
+                size="5"></select>
+
         </select>
     </div>
 
     <div class="form-group">
         <label for="rooms">Rooms</label>
-        <select multiple class="form-control" id="rooms">
-            <option>Room nr 1</option>
-            <option>Room nr 2</option>
-            <option>Room nr 3</option>
-            <option>Room nr 4</option>
+        <select class="form-control"
+                ng-model="selected.available"
+                ng-options="'Room ' +c.number for c in rooms"
+                id="rooms"
+                multiple
+                disabled
+                size="5"></select>
+
         </select>
     </div>
 

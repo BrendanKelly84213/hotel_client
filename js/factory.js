@@ -46,6 +46,29 @@
                 return $http.delete(urlBaseRoom + '/' + id);
             };
 
+
+            // RESERVATIONS
+            dataFactory.getReservations= function(){
+                return $http.get(urlBaseReservation);
+            };
+
+            dataFactory.getReservation = function(id){
+                return $http.get(urlBaseReservation + '/' +id);
+            };
+
+            dataFactory.addReservation = function (reservation) {
+                return $http.post(urlBaseReservation, reservation);
+            };
+            dataFactory.editReservation = function (reservation) {
+                return $http.post(urlBaseReservation, reservation);
+            };
+            dataFactory.deleteReservation = function (id) {
+                return $http.delete(urlBaseReservation + '/' + id);
+            };
+
+            //
+
+
             return dataFactory;
 
         }]);
