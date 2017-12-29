@@ -5,17 +5,15 @@
         <th>Room number</th>
         <th>Capacity</th>
         <th>Room type</th>
-        <th>Room status</th>
         <th>Options</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="r in rooms">
-        <th>{{r.id}}</th>
-        <th>{{r.number}}</th>
-        <td>{{r.capacity}}</td>
-        <td>{{r.roomType}}</td>
-        <td>{{r.roomStatus}}</td>
+        <td>{{r.id}}</td>
+        <td>{{r.number}}</td>
+        <td>{{r.maxCapacity}}</td>
+        <td>{{r.roomType.description}}</td>
         <td>
             <a class="btn btn-info">Prices</a>
             <a class="btn btn-warning">Reservations</a>

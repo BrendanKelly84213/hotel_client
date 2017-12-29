@@ -29,14 +29,14 @@
         </thead>
         <tbody>
         <tr ng-repeat="c in customers">
-            <th>{{c.id}}</th>
-            <td>{{c.name}}</td>
-            <td>{{c.surname}}</td>
+            <td>{{c.id}}</td>
+            <td>{{c.firstName}}</td>
+            <td>{{c.lastName}}</td>
             <td>{{c.birthday | date}}</td>
-            <td>{{c.identityCard.idCardNumber}}</td>
+            <td>{{c.identityCard.number}}</td>
             <td>
                 <a class="btn btn-info">Reservations</a>
-                <a class="btn btn-warning" ng-click="addReservation(c.id, c.name, c.surname)">Add reservation</a>
+                <a class="btn btn-warning" ng-click="addReservation(c.id, c.firstName, c.lastName)">Add reservation</a>
             </td>
         </tr>
         </tbody>

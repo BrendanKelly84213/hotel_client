@@ -16,9 +16,9 @@
             this.customers = getCustomers();
         };
 
-        $scope.addReservation = function (id, name, surname) {
-            console.log(id, name, surname);
-            $state.go('addReservation', { id: id, name: name, surname: surname});
+        $scope.addReservation = function (id, firstName, lastName) {
+            console.log(id, firstName, lastName);
+            $state.go('addReservation', { id: id, firstName: firstName, lastName: lastName});
         };
         
         $scope.searchCustomer = function (name, surname, cardNo) {
@@ -41,14 +41,12 @@
 
         $scope.addCustomer = function () {
             var customer = {
-                "name" : $scope.name,
-                "surname" : $scope.surname,
+                "firstName" : $scope.name,
+                "lastName" : $scope.surname,
                 "birthday" : $scope.dateOfBirth,
                 "identityCard": {
-                    "idCardType" : $scope.idCardType,
-                    "idCardNumber" : $scope.idCardNumber,
-                    "monthExpiring" : new Date($scope.idCardExp).getMonth(),
-                    "yearExpiring" : new Date($scope.idCardExp).getYear()
+                    "number" : $scope.idCardNumber,
+                    "dateExpiring" : new Date($scope.idCardExp).getMonth(),
                 }
             };
 

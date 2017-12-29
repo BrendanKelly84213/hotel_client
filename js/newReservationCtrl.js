@@ -12,8 +12,8 @@
 
         var newReservationData = {
             id: $state.params.id,
-            name: $state.params.name,
-            surname: $state.params.surname
+            firstName: $state.params.firstName,
+            lastName: $state.params.lastName
         };
 
         $scope.data = newReservationData;
