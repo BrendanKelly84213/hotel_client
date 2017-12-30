@@ -7,6 +7,7 @@
             var urlBase = 'http://localhost:8080';
             var urlBaseCustomers = urlBase + '/api/customers';
             var urlBaseRoom = urlBase + '/api/rooms';
+            var urlBaseRoomTypes = urlBase + '/api/roomTypes';
             var urlBasePrice = urlBase + '/api/prices';
             var urlBaseReservation = urlBase + '/api/reservations';
 
@@ -59,6 +60,22 @@
                 return $http.delete(urlBaseRoom + '/' + id);
             };
 
+            // ROOM TYPES
+            dataFactory.getRoomTypes = function () {
+                return $http.get(urlBaseRoomTypes);
+            };
+            dataFactory.getRoomType = function (id) {
+                return $http.get(urlBaseRoomTypes + '/' + id);
+            };
+            dataFactory.addRoomType = function (roomType) {
+                return $http.post(urlBaseRoomTypes, roomType);
+            };
+            dataFactory.editRoomType = function (roomType) {
+                return $http.post(urlBaseRoomTypes, roomType);
+            };
+            dataFactory.deleteRoomType = function (id) {
+                return $http.delete(urlBaseRoomTypes + '/' + id);
+            };
 
             // RESERVATIONS
             dataFactory.getReservations= function(){

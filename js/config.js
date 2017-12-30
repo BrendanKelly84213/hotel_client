@@ -41,7 +41,8 @@
                 var addRoom = {
                     name: 'addRoom',
                     url: '/addRoom',
-                    templateUrl: 'views/addRoom.html'
+                    templateUrl: 'views/addRoom.html',
+                    controller: 'roomCtrl'
                 };
 
                 var customers = {
