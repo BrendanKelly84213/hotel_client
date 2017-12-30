@@ -28,7 +28,6 @@
                     $scope.roomTypes = response.data;
                 }, function (error) {
                     console.log('Unable to get roomTypes!');
-                    console.log(error);
                 })
         }
 
@@ -54,7 +53,6 @@
                     $scope.result = response.message;
                 }, function (error) {
                     console.log('Unable to add room! :');
-                    console.log(error);
                 })
         };
     }
