@@ -42,6 +42,9 @@
             dataFactory.deleteCustomer = function (id) {
                 return $http.delete(urlBaseCustomers + '/' + id);
             };
+            dataFactory.findByIdCardNumber = function (idCardNumber) {
+                return $http.get(urlBaseCustomers + '/byIdCard/' + idCardNumber)
+            };
 
             // ROOMS
             dataFactory.getRooms = function () {
@@ -96,8 +99,19 @@
                 return $http.delete(urlBaseReservation + '/' + id);
             };
 
-            //
 
+            // AVAILABILITY
+            dataFactory.getAvailability = function(since, to, roomType) {
+                return $http({
+                    url: urlBaseRoom + '/freeByRoomType',
+                    method: 'GET',
+                    params: {
+                        'since': since,
+                        'to': to,
+                        'roomType': roomType
+                    }
+                });
+            };
 
             return dataFactory;
 

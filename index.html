@@ -22,13 +22,14 @@
     <script src="js/factory.js"></script>
     <script src="js/customerCtrl.js"></script>
     <script src="js/roomCtrl.js"></script>
-    <script src="js/newReservationCtrl.js"></script>
+    <script src="js/availabilityCtrl.js"></script>
+    <script src="js/managerCtrl.js"></script>
     <script src="js/config.js"></script>
 
 </head>
 <body ng-app="app" ng-controller="ctrl">
 <div class="container">
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+    <nav class="navbar navbar-toggleable-md navbar-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,10 +39,19 @@
                 <li class="nav-item"><a class="nav-link"ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
                 <li class="nav-item"><a class="nav-link"ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
                 <li class="nav-item"><a class="nav-link"ui-sref="customers" ui-sref-active="active">customers</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="login" ui-sref-active="active">login</a></li>
+                <li class="nav-item"><a class="nav-link"ui-sref="availability" ui-sref-active="active">availability</a></li>
                 <li class="nav-item"><a class="nav-link"ui-sref="payments" ui-sref-active="active">payments</a></li>
                 <li class="nav-item"><a class="nav-link"ui-sref="reservations" ui-sref-active="active">reservations</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="rooms" ui-sref-active="active">rooms</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" ui-sref="roomTypes" ui-sref-active="active">room types</a>
+                        <a class="dropdown-item" ui-sref="rooms" ui-sref-active="active">rooms</a>
+                        <a class="dropdown-item" ui-sref="prices" ui-sref-active="active">prices</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -49,7 +59,7 @@
     <div id="content" class="row element no-gutters">
         <div class="col-12">
             <ui-view>
-                <img src="resources/img/loading.gif"/>
+                <img class="loading-gif" src="resources/img/loading.gif"/>
             </ui-view>
         </div>
     </div>

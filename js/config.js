@@ -74,8 +74,30 @@
                     name: 'rooms',
                     url: '/rooms',
                     templateUrl: 'views/rooms.html',
-                    controller: 'roomCtrl'
+                    controller: 'managerCtrl'
                 };
+
+                var availability = {
+                    name: 'availability',
+                    url: '/availability',
+                    templateUrl: 'views/availability.html',
+                    controller: 'availabilityCtrl'
+                };
+
+                var prices = {
+                    name: 'prices',
+                    url: '/prices',
+                    templateUrl: 'views/prices.html',
+                    controller: 'managerCtrl'
+                };
+
+                var roomTypes = {
+                    name: 'roomTypes',
+                    url: '/roomTypes',
+                    templateUrl: 'views/roomTypes.html',
+                    controller: 'managerCtrl'
+                };
+
 
                 $stateProvider.state(main);
                 $stateProvider.state(addCustomer);
@@ -87,5 +109,10 @@
                 $stateProvider.state(payments);
                 $stateProvider.state(reservations);
                 $stateProvider.state(rooms);
+                $stateProvider.state(availability);
+                $stateProvider.state(prices);
+                $stateProvider.state(roomTypes);
+
+
             }]);
 })();

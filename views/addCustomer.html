@@ -1,4 +1,27 @@
 <form>
+
+    <div id="customerFoundInfo"></div>
+    <!--ID-->
+    <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
+        <option value="ID_CARD">ID Card</option>
+        <option value="PASSPORT">Passport</option>
+    </select>
+    <div class="form-group">
+        <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
+        <div class="col-10">
+            <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
+        <div class="col-10">
+            <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
+        </div>
+    </div>
+
+
+
     <!--Customer-->
     <div class="form-group">
         <label for="name" class="col-10 col-form-label">First name</label>
@@ -26,25 +49,7 @@
             <input class="form-control" type="date" id="birthday" ng-model="dateOfBirth">
         </div>
     </div>
-    <!--ID-->
-    <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
-        <option value="ID_CARD">ID Card</option>
-        <option value="PASSPORT">Passport</option>
-    </select>
 
-    <div class="form-group">
-        <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
-        <div class="col-10">
-            <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
-        <div class="col-10">
-            <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
-        </div>
-    </div>
 
     <button type="submit" class="btn btn-primary" ng-click="addCustomer()"> Add customer</button>
 </form>

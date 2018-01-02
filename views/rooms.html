@@ -1,3 +1,20 @@
+<div class="col-12 element">
+
+    <div class="col-12">
+        <form class="form-inline">
+            <input class="form-control m-1" type="text" placeholder="">
+            <input class="form-control m-1" type="text" placeholder="Last Name">
+            <input class="form-control m-1" type="text" placeholder="ID number">
+            <a class="d-inline-block btn btn-primary m-1" ng-click="searchCustomers()">Search</a>
+        </form>
+    </div>
+
+    <div class="col-12">
+        <a class="d-inline-block btn btn-success m-1" ui-sref="addCustomer">New Customer</a>
+        <a class="d-inline-block btn btn-warning m-1" ng-click="refresh()">Refresh list</a>
+    </div>
+</div>
+
 <table class="table">
     <thead>
     <tr>

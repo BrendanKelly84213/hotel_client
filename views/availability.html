@@ -1,0 +1,47 @@
+<div class="col-12 my-2">
+        <div class="col-3 d-inline-block">
+            <label for="fromInput">From:</label>
+            <input ng-model="fromInput" type="date" class="form-control" id="fromInput">
+        </div>
+        <div class="col-3 d-inline-block">
+            <label for="toInput">To:</label>
+            <input ng-model="toInput" type="date" class="form-control" id="toInput">
+        </div>
+
+        <div class="col-3 d-inline-block">
+            <label for="roomTypeInput">Room type:</label>
+            <select ng-model="roomTypeInput" class="form-control" id="roomTypeInput">
+                <option>All</option>
+                <option ng-repeat="type in roomTypes">{{type.name}}</option>
+            </select>
+        </div>
+        <div class="col-2 d-inline-block">
+            <a class="btn btn-primary" href="" ng-click="searchAvailability(fromInput, toInput, roomTypeInput)">Search</a>
+        </div>
+</div>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Room number</th>
+        <th>Capacity</th>
+        <th>Room type</th>
+        <th>Total price</th>
+        <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="r in rooms">
+        <td>{{r.id}}</td>
+        <td>{{r.number}}</td>
+        <td>{{r.maxCapacity}}</td>
+        <td>{{r.roomType}}</td>
+        <td>{{r.totalPrice}}</td>
+        <td>
+            <a class="btn btn-info" ng-click="addReservation(r.id)">Reserve</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

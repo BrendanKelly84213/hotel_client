@@ -55,7 +55,12 @@
                     $scope.result = response.message;
                 }, function (error) {
                     console.log("Unable to add customer");
-                })
+                });
+
+            $('#customerFoundInfo').focusout(function() {
+
+
+            });
         };
     }
 
