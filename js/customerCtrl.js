@@ -52,7 +52,9 @@
 
             dataFactory.addCustomer(customer)
                 .then(function (response) {
-                    $scope.result = response.message;
+                    if (response.data != null) {
+                        $scope.message = "Room type added successfully!"
+                    }
                 }, function (error) {
                     console.log("Unable to add customer");
                 });
