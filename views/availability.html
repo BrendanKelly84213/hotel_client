@@ -1,23 +1,39 @@
-<div class="col-12 my-2">
-        <div class="col-3 d-inline-block">
-            <label for="fromInput">From:</label>
-            <input ng-model="fromInput" type="date" class="form-control" id="fromInput">
-        </div>
-        <div class="col-3 d-inline-block">
-            <label for="toInput">To:</label>
-            <input ng-model="toInput" type="date" class="form-control" id="toInput">
-        </div>
+<div class="col-12">
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchAvailability"
+                aria-expanded="false" aria-controls="searchAvailability" id="searchBtn">
+            Show search panel
+        </button>
+        <a href="" class="btn btn-warning" ng-click="refresh()">Refresh list</a>
+    </p>
 
-        <div class="col-3 d-inline-block">
-            <label for="roomTypeInput">Room type:</label>
-            <select ng-model="roomTypeInput" class="form-control" id="roomTypeInput">
-                <option>All</option>
-                <option ng-repeat="type in roomTypes">{{type.name}}</option>
-            </select>
-        </div>
-        <div class="col-2 d-inline-block">
-            <a class="btn btn-primary" href="" ng-click="searchAvailability(fromInput, toInput, roomTypeInput)">Search</a>
-        </div>
+    <div class="collapse" id="searchAvailability">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-sm-4">
+                    <label for="fromInput" class="col-2 col-form-label">From</label>
+                    <input ng-model="fromInput" class="form-control" type="date" value="2011-08-19" id="fromInput">
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="toInput" class="col-2 col-form-label">To</label>
+                    <input ng-model="toInput" class="form-control" type="date" value="2011-08-19" id="toInput">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="roomTypeSearchInput">Room type</label>
+                    <select class="form-control" id="roomTypeSearchInput" placeholder="Room type">
+                        <option ng-repeat="type in roomTypes">{{type.name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-primary" ng-click="searchCustomers(firstNameInput, lastNameInput)">Search</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
 </div>
 
 
@@ -28,17 +44,15 @@
         <th>Room number</th>
         <th>Capacity</th>
         <th>Room type</th>
-        <th>Total price</th>
         <th>Options</th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="r in rooms">
+    <tr ng-repeat="r in availableRooms">
         <td>{{r.id}}</td>
         <td>{{r.number}}</td>
         <td>{{r.maxCapacity}}</td>
         <td>{{r.roomType}}</td>
-        <td>{{r.totalPrice}}</td>
         <td>
             <a class="btn btn-info" ng-click="addReservation(r.id)">Reserve</a>
         </td>

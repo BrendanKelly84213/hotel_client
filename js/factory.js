@@ -99,10 +99,7 @@
                 return $http.delete(urlBaseReservation + '/' + id);
             };
             
-            dataFactory.getPrices = function (roomId, from, to) {
-                return $http.get(urlBasePrice);
-                //TODO: fix this url /\
-            };
+
 
 
             // AVAILABILITY
@@ -119,9 +116,22 @@
             };
             
             // PRICES
-            dataFactory.addPrice = function () {
-                
-            }
+            dataFactory.addPrice = function (price) {
+                return $http.post(urlBasePrice, price);
+            };
+
+            dataFactory.getPrices = function (roomId, from, to) {
+                return $http({
+                    url: urlBasePrice + '/byRoomAndInterval',
+                    method: 'GET',
+                    params: {
+                        'since': since,
+                        'to': to,
+                        'roomId': roomId
+                    }
+                });
+                //TODO: fix this url /\
+            };
 
             return dataFactory;
 

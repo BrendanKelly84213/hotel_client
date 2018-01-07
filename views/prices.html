@@ -1,3 +1,23 @@
+<!-- Modal success -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="modalHeader">
+                <h5 class="modal-title" id="modalTitle">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{message}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="col-12">
     <h5>Showing prices for room: {{roomInfo.name}}</h5>
     <p>
@@ -9,7 +29,6 @@
                 aria-expanded="false" aria-controls="addPrice"  id="addBtn">
             New price
         </button>
-        <a href="" class="btn btn-warning" ng-click="refresh()" id="refreshBtn">Refresh list</a>
         <a class="btn btn-info" href="" ui-sref="rooms">Choose another room</a>
     </p>
     <div class="collapse" id="searchPrice">
@@ -27,7 +46,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-12">
-                    <a href="" class="btn btn-primary" ng-click="searchPrices(fromInput, toInput)">
+                    <a href="" class="btn btn-primary" ng-click="searchPrices(fromSearchInput, toSearchInput)">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -71,7 +90,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="p in prices">
-            <td>{{p.name}}</td>
+            <td>{{p.room.number}}</td>
             <td>{{p.from}}</td>
             <td>{{p.to}}</td>
             <td>{{p.price}}</td>

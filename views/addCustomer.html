@@ -1,54 +1,53 @@
-<form>
+<div class="col-12">
+    <form>
+        <!--ID-->
+        <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
+            <option value="ID_CARD">ID Card</option>
+            <option value="PASSPORT">Passport</option>
+        </select>
+        <div class="form-group">
+            <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
+            <div class="col-10">
+                <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
+            </div>
+        </div>
 
-    <!--ID-->
-    <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
-        <option value="ID_CARD">ID Card</option>
-        <option value="PASSPORT">Passport</option>
-    </select>
-    <div class="form-group">
-        <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
-        <div class="col-10">
-            <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
+        <!--Customer-->
+        <div class="form-group">
+            <label for="name" class="col-10 col-form-label">First name</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="First Name" id="name" ng-model="name">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
-        <div class="col-10">
-            <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
+        <div class="form-group">
+            <label for="surname" class="col-10 col-form-label">Surname</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Surname" id="surname" ng-model="surname">
+            </div>
         </div>
-    </div>
-
-
-
-    <!--Customer-->
-    <div class="form-group">
-        <label for="name" class="col-10 col-form-label">First name</label>
-        <div class="col-10">
-            <input class="form-control" type="text" placeholder="First Name" id="name" ng-model="name">
+        <!--
+        <div class="form-group">
+            <label for="phoneNumber" class="col-10 col-form-label">Phone number</label>
+            <div class="col-10">
+                <input class="form-control" type="tel" placeholder="Phone number" id="phoneNumber" ng-model="phoneNumber">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="surname" class="col-10 col-form-label">Surname</label>
-        <div class="col-10">
-            <input class="form-control" type="text" placeholder="Surname" id="surname" ng-model="surname">
+        -->
+        <div class="form-group">
+            <label for="birthday" class="col-10 col-form-label">Birthday</label>
+            <div class="col-10">
+                <input class="form-control" type="date" id="birthday" ng-model="dateOfBirth">
+            </div>
         </div>
-    </div>
-    <!--
-    <div class="form-group">
-        <label for="phoneNumber" class="col-10 col-form-label">Phone number</label>
-        <div class="col-10">
-            <input class="form-control" type="tel" placeholder="Phone number" id="phoneNumber" ng-model="phoneNumber">
-        </div>
-    </div>
-    -->
-    <div class="form-group">
-        <label for="birthday" class="col-10 col-form-label">Birthday</label>
-        <div class="col-10">
-            <input class="form-control" type="date" id="birthday" ng-model="dateOfBirth">
-        </div>
-    </div>
 
 
-    <button type="submit" class="btn btn-primary" ng-click="addCustomer()"> Add customer</button>
-</form>
+        <button type="submit" class="btn btn-primary" ng-click="addCustomer()"> Add customer</button>
+    </form>
+</div>

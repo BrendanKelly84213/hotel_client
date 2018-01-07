@@ -39,14 +39,34 @@
         <a class="navbar-brand" href="#">Hotel App</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
-                <li class="nav-item"><a class="nav-link" ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
-                <li class="nav-item"><a class="nav-link" ui-sref="customers" ui-sref-active="active">customers</a></li>
-                <li class="nav-item"><a class="nav-link" ui-sref="availability" ui-sref-active="active">availability</a></li>
-                <li class="nav-item"><a class="nav-link" ui-sref="payments" ui-sref-active="active">payments</a></li>
-                <li class="nav-item"><a class="nav-link" ui-sref="reservations" ui-sref-active="active">reservations</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="customers" ui-sref-active="active"
+                       data-toggle="tooltip" data-placement="bottom" title="Find customers">
+                        customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="availability" ui-sref-active="active"
+                       data-toggle="tooltip" data-placement="bottom" title="Search and book free rooms">
+                        availability
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="payments" ui-sref-active="active"
+                       data-toggle="tooltip" data-placement="bottom" title="Find payments">
+                        payments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="reservations" ui-sref-active="active"
+                       data-toggle="tooltip" data-placement="bottom" title="Find reservations">
+                        reservations
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"
+                       data-toggle="tooltip" data-placement="bottom" title="Manage hotel">
                         management
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

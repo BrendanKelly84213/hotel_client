@@ -14,6 +14,9 @@
 
     function ctrl($scope) {
         $scope.welcomeMsg = 'Welcome to hotel app. Use the menu above to nagivate.';
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
 
     }
 
