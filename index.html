@@ -12,6 +12,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="resources/style.css">
 
+    <!-- Font Awesome icons -->
+    <script src="https://use.fontawesome.com/6cb48c08f7.js"></script>
+
     <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" integrity="sha256-zBy1l2WBAh2vPF8rnjFMUXujsfkKjya0Jy5j6yKj0+Q=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js" integrity="sha256-E6XubcgT4a601977ZZP4Yw/0UCB2/Ex+Bazst+JRw1U=" crossorigin="anonymous"></script>
@@ -23,7 +26,8 @@
     <script src="js/customerCtrl.js"></script>
     <script src="js/roomCtrl.js"></script>
     <script src="js/availabilityCtrl.js"></script>
-    <script src="js/managerCtrl.js"></script>
+    <script src="js/roomTypeCtrl.js"></script>
+    <script src="js/priceCtrl.js"></script>
     <script src="js/config.js"></script>
 </head>
 <body ng-app="app" ng-controller="ctrl">
@@ -35,12 +39,12 @@
         <a class="navbar-brand" href="#">Hotel App</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link"ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="customers" ui-sref-active="active">customers</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="availability" ui-sref-active="active">availability</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="payments" ui-sref-active="active">payments</a></li>
-                <li class="nav-item"><a class="nav-link"ui-sref="reservations" ui-sref-active="active">reservations</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="addPayment" ui-sref-active="active">addPayment</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="addRoom" ui-sref-active="active">addRoom</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="customers" ui-sref-active="active">customers</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="availability" ui-sref-active="active">availability</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="payments" ui-sref-active="active">payments</a></li>
+                <li class="nav-item"><a class="nav-link" ui-sref="reservations" ui-sref-active="active">reservations</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         management
@@ -48,7 +52,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" ui-sref="roomTypes" ui-sref-active="active">room types</a>
                         <a class="dropdown-item" ui-sref="rooms" ui-sref-active="active">rooms</a>
-                        <a class="dropdown-item" ui-sref="prices" ui-sref-active="active">prices</a>
+                        <!--<a class="dropdown-item" ui-sref="prices" ui-sref-active="active">prices</a>-->
                     </div>
                 </li>
             </ul>

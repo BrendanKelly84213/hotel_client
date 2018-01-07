@@ -13,13 +13,15 @@
         this.roomTypes = getRoomTypes();
 
         $scope.refresh = function () {
-            console.log("odswiezanko");
-            this.roomTypes = getRoomTypes();
             this.rooms = getRooms();
         };
 
         $scope.searchRoom = function () {
             console.log("Looking for room");
+        };
+
+        $scope.showPrices = function (id, name) {
+            $state.go('prices', { id: id, name: name});
         };
 
         function getRoomTypes() {
@@ -28,7 +30,7 @@
                     $scope.roomTypes = response.data;
                 }, function (error) {
                     console.log('Unable to get roomTypes!');
-                })
+                });
         }
 
         function getRooms() {

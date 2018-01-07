@@ -1,1 +1,85 @@
-{{prices}}
+<div class="col-12">
+    <h5>Showing prices for room: {{roomInfo.name}}</h5>
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchPrice"
+                aria-expanded="false" aria-controls="searchPrice" id="searchBtn">
+            Search
+        </button>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addPrice"
+                aria-expanded="false" aria-controls="addPrice"  id="addBtn">
+            New price
+        </button>
+        <a href="" class="btn btn-warning" ng-click="refresh()" id="refreshBtn">Refresh list</a>
+        <a class="btn btn-info" href="" ui-sref="rooms">Choose another room</a>
+    </p>
+    <div class="collapse" id="searchPrice">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label for="fromSearchInput" class="col-2 col-form-label">From</label>
+                    <input ng-model="fromInput" class="form-control" type="date" value="2011-08-19"  id="fromSearchInput">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label for="toSearchInput" class="col-2 col-form-label">To</label>
+                    <input ng-model="toInput" class="form-control" type="date" value="2011-08-19" id="toSearchInput">
+                </div>
+                <div class="offset-md-4"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-primary" ng-click="searchPrices(fromInput, toInput)">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="collapse" id="addPrice">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-sm-4">
+                    <label for="fromInput" class="col-2 col-form-label">From</label>
+                    <input ng-model="fromInput" class="form-control" type="date" value="2011-08-19" id="fromInput">
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="toInput" class="col-2 col-form-label">To</label>
+                    <input ng-model="toInput" class="form-control" type="date" value="2011-08-19" id="toInput">
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="amountInput" class="col-2 col-form-label">Amount</label>
+                    <input ng-model="amountInput" class="form-control" type="number" value="2011-08-19" id="amountInput">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-success" ng-click="addPrice(fromInput, toInput, amountInput)">Add price</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Room name</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Price</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in prices">
+            <td>{{p.name}}</td>
+            <td>{{p.from}}</td>
+            <td>{{p.to}}</td>
+            <td>{{p.price}}</td>
+            <td>
+                <a href="" class="btn btn-danger">Delete</a>
+                <a href="" class="btn btn-warning">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

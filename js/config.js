@@ -39,12 +39,6 @@
                     templateUrl: 'views/addReservation.html',
                     controller: 'newReservationCtrl'
                 };
-                var addRoom = {
-                    name: 'addRoom',
-                    url: '/addRoom',
-                    templateUrl: 'views/addRoom.html',
-                    controller: 'roomCtrl'
-                };
 
                 var customers = {
                     name: 'customers',
@@ -71,13 +65,6 @@
                     templateUrl: 'views/reservations.html'
                 };
 
-                var rooms = {
-                    name: 'rooms',
-                    url: '/rooms',
-                    templateUrl: 'views/rooms.html',
-                    controller: 'managerCtrl'
-                };
-
                 var availability = {
                     name: 'availability',
                     url: '/availability',
@@ -85,18 +72,29 @@
                     controller: 'availabilityCtrl'
                 };
 
+                var rooms = {
+                    name: 'rooms',
+                    url: '/rooms',
+                    templateUrl: 'views/rooms.html',
+                    controller: 'roomCtrl'
+                };
+
                 var prices = {
                     name: 'prices',
                     url: '/prices',
+                    params: {
+                        name: null,
+                        id: null
+                    },
                     templateUrl: 'views/prices.html',
-                    controller: 'managerCtrl'
+                    controller: 'priceCtrl'
                 };
 
                 var roomTypes = {
                     name: 'roomTypes',
                     url: '/roomTypes',
                     templateUrl: 'views/roomTypes.html',
-                    controller: 'managerCtrl'
+                    controller: 'roomTypeCtrl'
                 };
 
 
@@ -104,7 +102,6 @@
                 $stateProvider.state(addCustomer);
                 $stateProvider.state(addPayment);
                 $stateProvider.state(addReservation);
-                $stateProvider.state(addRoom);
                 $stateProvider.state(customers);
                 $stateProvider.state(login);
                 $stateProvider.state(payments);
@@ -113,6 +110,7 @@
                 $stateProvider.state(availability);
                 $stateProvider.state(prices);
                 $stateProvider.state(roomTypes);
+
 
 
             }]);

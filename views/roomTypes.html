@@ -30,12 +30,12 @@
     <div class="collapse" id="newRoomType">
         <form>
             <div class="form-group">
-                <label for="roomNameInput">Room name</label>
-                <input ng-model="roomNameInput" type="text" class="form-control" id="roomNameInput">
+                <label for="roomNameInput">Room type name</label>
+                <input ng-model="roomNameInput" type="text" class="form-control" id="roomNameInput" required>
             </div>
             <div class="form-group">
-                <label for="roomDescriptionInput">Room description</label>
-                <textarea ng-model="roomDescriptionInput" class="form-control" id="roomDescriptionInput" rows="3"></textarea>
+                <label for="roomDescriptionInput">Room type description</label>
+                <textarea ng-model="roomDescriptionInput" class="form-control" id="roomDescriptionInput" rows="3" required></textarea>
             </div>
             <div class="form-group">
                 <a href="" class="btn btn-success"
@@ -47,7 +47,7 @@
 </div>
 
 <div class="col-12">
-    <table class="table table-hover">
+    <table class="table">
         <thead>
         <tr>
             <th>id</th>

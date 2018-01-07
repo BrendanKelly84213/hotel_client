@@ -1,43 +1,82 @@
 <div class="col-12">
-    <form>
-        <div class="form-group row">
-            <div class="col-12 col-md-4">
-                <label for="roomNameInput">Room name</label>
-                <input class="form-control" id="roomNameInput" type="text" placeholder="Room name">
-            </div>
-            <div class="col-12 col-md-4">
-                <label for="roomTypeInput">Room type</label>
-                <select class="form-control" id="roomTypeInput" placeholder="Room type">
-                    <option ng-repeat="type in roomTypes">{{type.name}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-12">
-                <a href="" class="btn btn-primary" ng-click="searchRooms()">Search</a>
-                <a href="" class="btn btn-success" ui-sref="addRoom">New room</a>
-                <a href="" class="btn btn-warning" ng-click="refresh()">Refresh list</a>
-            </div>
-        </div>
-    </form>
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchRoom"
+                aria-expanded="false" aria-controls="searchRoom" id="searchBtn">
+            Search
+        </button>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addRoom"
+                aria-expanded="false" aria-controls="addRoom"  id="addBtn">
+            New room
+        </button>
+        <a href="" class="btn btn-warning" ng-click="refresh()" id="refreshBtn">Refresh list</a>
+    </p>
 
+    <div class="collapse" id="searchRoom">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-md-4">
+                    <label for="roomNameSearchInput">Room name</label>
+                    <input class="form-control" id="roomNameSearchInput" type="text" placeholder="Room name">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="roomTypeSearchInput">Room type</label>
+                    <select class="form-control" id="roomTypeSearchInput" placeholder="Room type">
+                        <option ng-repeat="type in roomTypes">{{type.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-primary" ng-click="searchRooms()">Search</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="collapse" id="addRoom">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-md-4">
+                    <label for="roomNameInput">Room name</label>
+                    <input class="form-control" id="roomNameInput" type="text" placeholder="Room name">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="roomTypeInput">Room type</label>
+                    <select class="form-control" id="roomTypeInput" placeholder="Room type">
+                        <option ng-repeat="type in roomTypes">{{type.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-success" ng-click="addRoom()">Add room</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="col-12">
     <table class="table">
         <thead>
         <tr>
-            <th>Room name</th>
-            <th>Capacity</th>
-            <th>Room type</th>
-            <th>Options</th>
+            <th class="">Room name</th>
+            <th class="">Capacity</th>
+            <th class="">Room type</th>
+            <th class="">Options</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="r in rooms">
-            <td>{{r.name}}</td>
+            <td>{{r.number}}</td>
             <td>{{r.maxCapacity}}</td>
             <td>{{r.roomType.name}}</td>
             <td>
-                <a class="btn btn-info">Prices</a>
-                <a class="btn btn-warning">Reservations</a>
+                <a href="" class="btn btn-danger">Delete</a>
+                <a href="" class="btn btn-warning">Edit</a>
+                <a href="" class="btn btn-info" ng-click="showPrices(r.id, r.number)">Prices</a>
+                <a href="" class="btn btn-info">Reservations</a>
             </td>
         </tr>
         </tbody>
