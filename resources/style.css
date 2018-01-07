@@ -14,3 +14,12 @@
 .navbar-light {
     background-color: #85e0ff;
 }
+
+th {
+
+    background-color: #85e0ff;
+}
+
+.container-fluid {
+    padding: 0px;
+}

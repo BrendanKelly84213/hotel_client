@@ -1,17 +1,46 @@
 <div class="col-12 element">
+    <form>
+        <div class="form-group row">
+            <div class="col-6 col-md-4">
+                <input class="form-control" ng-model="firstNameInput" type="text" placeholder="First Name">
+            </div>
+            <div class="col-6 col-md-4">
+                <input class="form-control" ng-model="lastNameInput" type="text" placeholder="Last Name">
+            </div>
+        </div>
 
-    <div class="col-12">
-        <form class="form-inline">
-            <input class="form-control m-1" type="text" placeholder="First Name">
-            <input class="form-control m-1" type="text" placeholder="Last Name">
-            <input class="form-control m-1" type="text" placeholder="ID number">
-            <a href="" class="d-inline-block btn btn-primary m-1" ng-click="searchCustomers()">Search</a>
-        </form>
-    </div>
+        <div class="form-group row">
+            <div class="col-6 col-md-4">
+                <input class="form-control" type="text" placeholder="ID number">
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="btn-group hidden-xs-down" data-toggle="buttons">
+                    <label class="btn btn-info active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Passport
+                    </label>
+                    <label class="btn btn-info">
+                        <input type="radio" name="options" id="option2" autocomplete="off">ID card
+                    </label>
+                </div>
+                <div class="btn-group hidden-sm-up" data-toggle="buttons">
+                    <label class="btn btn-sm btn-info active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Passport
+                    </label>
+                    <label class="btn btn-sm btn-info">
+                        <input type="radio" name="options" id="option2" autocomplete="off">ID card
+                    </label>
+                </div>
+            </div>
+        </div>
 
-    <div class="col-12">
-        <a href="" class="d-inline-block btn btn-success m-1" ui-sref="addCustomer">New Customer</a>
-        <a href="" class="d-inline-block btn btn-warning m-1" ng-click="refresh()">Refresh list</a>
+    </form>
+
+    <div class="form-group row">
+        <div class="col-md-12">
+            <a href="" class="btn btn-primary" ng-click="searchCustomers(firstNameInput, lastNameInput)">Search</a>
+            <!--<a href="" class="btn btn-success" ui-sref="addCustomer">New Customer</a>-->
+            <a href="" class="btn btn-warning" ng-click="refresh()">Refresh list</a>
+        </div>
     </div>
 </div>
 
@@ -22,7 +51,7 @@
             <th>id</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Date of birth</th>
+            <th>Document type</th>
             <th>Passport/id</th>
             <th>Options</th>
         </tr>
@@ -32,7 +61,7 @@
             <td>{{c.id}}</td>
             <td>{{c.firstName}}</td>
             <td>{{c.lastName}}</td>
-            <td>{{c.birthday | date}}</td>
+            <td>{{c.identityCard.type}}</td>
             <td>{{c.identityCard.number}}</td>
             <td>
                 <a class="btn btn-info">Reservations</a>

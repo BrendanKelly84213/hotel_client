@@ -25,10 +25,9 @@
     <script src="js/availabilityCtrl.js"></script>
     <script src="js/managerCtrl.js"></script>
     <script src="js/config.js"></script>
-
 </head>
 <body ng-app="app" ng-controller="ctrl">
-<div class="container">
+<div class="container-fluid">
     <nav class="navbar navbar-toggleable-md navbar-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,14 +54,13 @@
             </ul>
         </div>
     </nav>
+</div>
 
-    <div id="content" class="row element no-gutters">
-        <div class="col-12">
-            <ui-view>
-                <img class="loading-gif" src="resources/img/loading.gif"/>
-            </ui-view>
-        </div>
+<div class="container">
+    <div ui-view id="content" class="row element">
+        <img class="loading-gif" src="resources/img/loading.gif"/>
     </div>
+
     <div class="row mt-5 footer no-gutters">
         <div class="col-12">
             <p class="text-center">Created using Bootstrap 4</p>

@@ -6,7 +6,8 @@
         .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
             function ($locationProvider, $stateProvider, $urlRouterProvider) {
                 $locationProvider.hashPrefix('');
-                $urlRouterProvider.otherwise('');
+                $urlRouterProvider.otherwise('/');
+
 
                 var main = {
                     name: 'main',

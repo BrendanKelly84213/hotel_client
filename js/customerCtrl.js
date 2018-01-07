@@ -59,10 +59,6 @@
                     console.log("Unable to add customer");
                 });
 
-            $('#customerFoundInfo').focusout(function() {
-
-
-            });
         };
     }
 
