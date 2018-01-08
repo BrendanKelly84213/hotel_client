@@ -10,21 +10,32 @@
 
     app.controller('ctrl', ctrl);
 
-    ctrl.$inject = ['$scope', '$location'];
+    ctrl.$inject = ['$scope', '$state', '$timeout'];
 
-    function ctrl($scope, $location) {
+    function ctrl($scope, $state, $timeout) {
+        redirectIfLoggedOut();
         $scope.welcomeMsg = 'Welcome to hotel app. Use the menu above to nagivate.';
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
 
+        function redirectIfLoggedOut() {
+            if (!(typeof $scope.loggedUser !== 'undefined')){
+                console.log('jestes niezalogowany');
+                $timeout(function(){
+                    $state.go('login')
+                });
+            }
+        }
+
+
         $scope.isLogged = function () {
             return typeof $scope.loggedUser !== 'undefined';
         };
+
         $scope.logout = function () {
-            console.log('elo');
             $scope.loggedUser = undefined;
-            $location.path("/login");
+            $state.go('login');
         }
     }
 

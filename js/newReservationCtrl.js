@@ -11,9 +11,9 @@
     function newReservationCtrl($scope, dataFactory, $state) {
 
         var newReservationData = {
-            id: $state.params.id,
-            firstName: $state.params.firstName,
-            lastName: $state.params.lastName
+            id: $state.params.roomId,
+            from: $state.params.from,
+            to: $state.params.to
         };
 
         $scope.data = newReservationData;

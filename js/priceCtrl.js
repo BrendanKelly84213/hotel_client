@@ -12,6 +12,9 @@
         validateState();
 
         function validateState() {
+/*            if (!$scope.$parent.isLogged()) {
+                $state.go('login');
+            }*/
             if ($state.params.id == null || $state.params.name == null){
                 $state.go('rooms');
             }

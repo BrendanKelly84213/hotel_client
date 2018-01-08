@@ -34,7 +34,7 @@
 </head>
 <body ng-app="app" ng-controller="ctrl">
 <div class="container-fluid">
-    <nav class="navbar navbar-toggleable-md navbar-light">
+    <nav class="navbar navbar-toggleable-sm navbar-light">
         <div ng-show="isLogged()">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -44,33 +44,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto" ng-show="isLogged()">
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="customers" ui-sref-active="active"
-                       data-toggle="tooltip" data-placement="bottom" title="Find customers">
+                    <a class="nav-link" ui-sref="customers" ui-sref-active="active">
                         customers
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="availability" ui-sref-active="active"
-                       data-toggle="tooltip" data-placement="bottom" title="Search and book free rooms">
+                    <a class="nav-link" ui-sref="availability" ui-sref-active="active">
                         availability
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="payments" ui-sref-active="active"
-                       data-toggle="tooltip" data-placement="bottom" title="Find payments">
+                    <a class="nav-link" ui-sref="payments" ui-sref-active="active">
                         payments
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="reservations" ui-sref-active="active"
-                       data-toggle="tooltip" data-placement="bottom" title="Find reservations">
+                    <a class="nav-link" ui-sref="reservations" ui-sref-active="active">
                         reservations
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"
-                       data-toggle="tooltip" data-placement="bottom" title="Manage hotel">
+                       aria-haspopup="true" aria-expanded="false" href>
                         management
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -80,8 +75,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-click="logout()" ui-sref-active="active"
-                       data-toggle="tooltip" data-placement="bottom" title="Log out">
+                    <a class="nav-link" ng-click="logout()" href>
                         logout
                     </a>
                 </li>

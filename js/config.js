@@ -34,8 +34,8 @@
                     url: '/addReservation',
                     params: {
                         id: null,
-                        name: null,
-                        surname: null
+                        from: null,
+                        to: null
                     },
                     templateUrl: 'views/addReservation.html',
                     controller: 'newReservationCtrl'
