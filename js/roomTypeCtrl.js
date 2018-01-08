@@ -26,7 +26,7 @@
                 .then(function (response) {
                     $scope.message = "Room type added.";
                     $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
-                    $('#modalRoomType').modal('show');
+                    $('#modal').modal('show');
                     $('#newRoomType').collapse('hide');
                     $('#roomNameInput').val('');
                     $('#roomDescriptionInput').val('');
@@ -34,7 +34,7 @@
                 }, function (error) {
                     $scope.message = "Error - failed to add room type.";
                     $('#modalHeader').addClass('bg-danger').removeClass('bg-success');
-                    $('#modalRoomType').modal('show');
+                    $('#modal').modal('show');
                     console.log("Unable to add room type!");
                 })
         };

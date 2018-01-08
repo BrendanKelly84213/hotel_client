@@ -42,21 +42,49 @@
                 })
         }
 
-        $scope.addRoom = function (roomToAdd) {
+        $scope.addRoom = function (number, roomTypeId, capacity) {
             var room = {
-                "number": roomToAdd.number,
-                "maxCapacity": roomToAdd.maxCapacity,
+                "number": number,
+                "maxCapacity": capacity,
                 "roomType": {
-                    "id": roomToAdd.roomTypeId
+                    "id": roomTypeId
                 }
             };
+            console.log(room);
             dataFactory.addRoom(room)
                 .then(function (response) {
-                    $scope.result = response.message;
+                    $scope.message = "Room added successfully.";
+                    $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
+                    $('#modal').modal('show');
+                    $('#newRoomType').collapse('hide');
+                    $('#roomNameInput').val('');
+                    $('#roomDescriptionInput').val('');
+                    getRoomTypes();
                 }, function (error) {
-                    console.log('Unable to add room! :');
-                })
+                    $scope.message = "Error - failed to add room type.";
+                    $('#modalHeader').addClass('bg-danger').removeClass('bg-success');
+                    $('#modal').modal('show');
+                    console.log("Unable to add room type!");
+                });
         };
+
+
+        $('#searchBtn').click(function () {
+            if($('#addRoom').hasClass('show'))
+                $('#addRoom').collapse('hide');
+        });
+
+        $('#addBtn').click(function () {
+            if($('#searchRoom').hasClass('show'))
+                $('#searchRoom').collapse('hide');
+        });
+
+        $('#refreshBtn').click(function () {
+            if($('#searchRoom').hasClass('show'))
+                $('#searchRoom').collapse('hide');
+            if($('#addRoom').hasClass('show'))
+                $('#addRoom').collapse('hide');
+        });
     }
 
 })();

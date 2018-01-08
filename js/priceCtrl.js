@@ -30,11 +30,13 @@
 
         $scope.roomInfo = data;
 
-        $scope.getPrices = function (from, to) {
-            dataFactory.getPrices(data.id, from, to)
+        $scope.searchPrices = function (from, to) {
+            var epochFrom = new Date(from).valueOf();
+            var epochTo = new Date(to).valueOf();
+            dataFactory.getPrices(data.id, epochFrom, epochTo)
                 .then(function (response) {
                     console.log(response.data);
-                    $scope.roomTypes = response.data;
+                    $scope.prices = response.data;
                 }, function (error) {
                     console.log('Unable to get prices for room ' + data.id);
                 })
@@ -82,12 +84,6 @@
                 $('#searchPrice').collapse('hide');
         });
 
-        $('#refreshBtn').click(function () {
-            if($('#searchPrice').hasClass('show'))
-                $('#searchPrice').collapse('hide');
-            if($('#addPrice').hasClass('show'))
-                $('#addPrice').collapse('hide');
-        });
     }
 
 })();

@@ -36,11 +36,11 @@
             <div class="form-group row">
                 <div class="col-12 col-sm-6 col-md-4">
                     <label for="fromSearchInput" class="col-2 col-form-label">From</label>
-                    <input ng-model="fromInput" class="form-control" type="date" value="2011-08-19"  id="fromSearchInput">
+                    <input ng-model="fromSearchInput" class="form-control" type="date" value="2011-08-19"  id="fromSearchInput">
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
                     <label for="toSearchInput" class="col-2 col-form-label">To</label>
-                    <input ng-model="toInput" class="form-control" type="date" value="2011-08-19" id="toSearchInput">
+                    <input ng-model="toSearchInput" class="form-control" type="date" value="2011-08-19" id="toSearchInput">
                 </div>
                 <div class="offset-md-4"></div>
             </div>
@@ -91,9 +91,9 @@
         <tbody>
         <tr ng-repeat="p in prices">
             <td>{{p.room.number}}</td>
-            <td>{{p.from}}</td>
-            <td>{{p.to}}</td>
-            <td>{{p.price}}</td>
+            <td>{{p.since}}</td>
+            <td>{{p.upTo}}</td>
+            <td>{{p.value}}</td>
             <td>
                 <a href="" class="btn btn-danger">Delete</a>
                 <a href="" class="btn btn-warning">Edit</a>

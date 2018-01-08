@@ -1,3 +1,23 @@
+<!-- Modal success -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="modalHeader">
+                <h5 class="modal-title" id="modalTitle">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{message}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="col-12">
     <p>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchRoom"
@@ -24,6 +44,7 @@
                         <option ng-repeat="type in roomTypes">{{type.name}}</option>
                     </select>
                 </div>
+
             </div>
             <div class="form-group row">
                 <div class="col-12">
@@ -38,18 +59,23 @@
             <div class="form-group row">
                 <div class="col-12 col-md-4">
                     <label for="roomNameInput">Room name</label>
-                    <input class="form-control" id="roomNameInput" type="text" placeholder="Room name">
+                    <input ng-model="roomNameInput" class="form-control" id="roomNameInput" type="text" placeholder="Room name">
                 </div>
                 <div class="col-12 col-md-4">
                     <label for="roomTypeInput">Room type</label>
-                    <select class="form-control" id="roomTypeInput" placeholder="Room type">
-                        <option ng-repeat="type in roomTypes">{{type.name}}</option>
+                    <select ng-model="roomTypeInput" class="form-control" id="roomTypeInput" placeholder="Room type">
+                        <option ng-repeat="type in roomTypes" ng-value="type.id">{{type.name}}</option>
                     </select>
+
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="roomCapacityInput">Room capacity</label>
+                    <input ng-model="roomCapacityInput" class="form-control" id="roomCapacityInput" type="number" min="0">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-12">
-                    <a href="" class="btn btn-success" ng-click="addRoom()">Add room</a>
+                    <a href="" class="btn btn-success" ng-click="addRoom(roomNameInput, roomTypeInput, roomCapacityInput)">Add room</a>
                 </div>
             </div>
 

@@ -126,12 +126,11 @@
                     url: urlBasePrice + '/byRoomAndInterval',
                     method: 'GET',
                     params: {
-                        'since': since,
+                        'since': from,
                         'to': to,
                         'roomId': roomId
                     }
                 });
-                //TODO: fix this url /\
             };
 
             // LOGIN

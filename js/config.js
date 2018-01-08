@@ -52,7 +52,7 @@
                     name: 'login',
                     url: '/login',
                     templateUrl: 'views/login.html',
-                    controller: 'loginCtrl',
+                    controller: 'loginCtrl'
                 };
 
                 var payments = {
