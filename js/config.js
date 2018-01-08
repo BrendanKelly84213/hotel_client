@@ -12,7 +12,8 @@
                 var main = {
                     name: 'main',
                     url: '/',
-                    templateUrl: 'views/main.html'
+                    templateUrl: 'views/main.html',
+                    controller: 'mainCtrl'
                 };
 
                 var addCustomer = {
@@ -50,7 +51,8 @@
                 var login = {
                     name: 'login',
                     url: '/login',
-                    templateUrl: 'views/login.html'
+                    templateUrl: 'views/login.html',
+                    controller: 'loginCtrl',
                 };
 
                 var payments = {

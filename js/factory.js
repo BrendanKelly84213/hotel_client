@@ -10,6 +10,7 @@
             var urlBaseRoomTypes = urlBase + '/api/roomTypes';
             var urlBasePrice = urlBase + '/api/prices';
             var urlBaseReservation = urlBase + '/api/reservations';
+            var urlBaseUsers = urlBase + '/api/users';
 
             var dataFactory = {};
 
@@ -98,7 +99,7 @@
             dataFactory.deleteReservation = function (id) {
                 return $http.delete(urlBaseReservation + '/' + id);
             };
-            
+
 
 
 
@@ -114,7 +115,7 @@
                     }
                 });
             };
-            
+
             // PRICES
             dataFactory.addPrice = function (price) {
                 return $http.post(urlBasePrice, price);
@@ -132,6 +133,13 @@
                 });
                 //TODO: fix this url /\
             };
+
+            // LOGIN
+
+            dataFactory.login = function (loginDto) {
+                return $http.post(urlBaseUsers + '/login', loginDto);
+            };
+
 
             return dataFactory;
 

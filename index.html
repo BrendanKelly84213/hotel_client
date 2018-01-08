@@ -28,17 +28,21 @@
     <script src="js/availabilityCtrl.js"></script>
     <script src="js/roomTypeCtrl.js"></script>
     <script src="js/priceCtrl.js"></script>
+    <script src="js/loginCtrl.js"></script>
+    <script src="js/mainCtrl.js"></script>
     <script src="js/config.js"></script>
 </head>
 <body ng-app="app" ng-controller="ctrl">
 <div class="container-fluid">
     <nav class="navbar navbar-toggleable-md navbar-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div ng-show="isLogged()">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <a class="navbar-brand" href="#">Hotel App</a>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" ng-show="isLogged()">
                 <li class="nav-item">
                     <a class="nav-link" ui-sref="customers" ui-sref-active="active"
                        data-toggle="tooltip" data-placement="bottom" title="Find customers">

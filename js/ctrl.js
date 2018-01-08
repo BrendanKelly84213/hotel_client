@@ -18,6 +18,9 @@
             $('[data-toggle="tooltip"]').tooltip()
         });
 
+        $scope.isLogged = function () {
+            return typeof $scope.loggedUser !== 'undefined';
+        }
     }
 
 })();
