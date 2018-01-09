@@ -1,0 +1,140 @@
+<!-- Modal success -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="modalHeader">
+                <h5 class="modal-title" id="modalTitle">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{message}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchUser"
+                aria-expanded="false" aria-controls="searchUser" id="searchBtn">
+            Search
+        </button>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addUser"
+                aria-expanded="false" aria-controls="addUser" id="addBtn">
+            New user
+        </button>
+        <a href="" class="btn btn-warning" ng-click="refresh()" id="refreshBtn">Refresh list</a>
+    </p>
+
+    <div class="collapse" id="searchUser">
+        <form>
+            <div class="form-group row">
+                <div class="col-12 col-md-4">
+                    <label for="usernameSearchInput">Username</label>
+                    <input class="form-control" id="usernameSearchInput" type="text" placeholder="username">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="roleSearchInput">Role</label>
+                    <select class="form-control" id="roleSearchInput" placeholder="Role">
+                        <option ng-repeat="role in roles">{{role.description}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-primary" ng-click="searchUsers()">Search</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="collapse" id="addUser">
+        <form>
+            <div class="form-group row">
+
+                <div class="col-12 col-md-4">
+                    <label for="usernameInput">Username</label>
+                    <input ng-model="usernameInput" class="form-control" id="usernameInput" type="text"
+                           placeholder="Username">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="emailInput">E-mail</label>
+                    <input ng-model="emailInput" class="form-control" id="emailInput" type="text"
+                           placeholder="E-mail">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="passwordInput">Password</label>
+                    <input ng-model="passwordInput" class="form-control" id="passwordInput" type="text"
+                           placeholder="Password">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="firstNameInput">First name</label>
+                    <input ng-model="firstNameInput" class="form-control" id="firstNameInput" type="text"
+                           placeholder="First name">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="lastNameInput">Last name</label>
+                    <input ng-model="lastNameInput" class="form-control" id="lastNameInput" type="text"
+                           placeholder="Last name">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label for="roleInput">Role</label>
+                    <select ng-model="roleInput" class="form-control" id="roleInput" placeholder="Role">
+                        <option ng-repeat="role in roles" ng-value="role.id">{{role.description}}</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <a href="" class="btn btn-success"
+                       ng-click="addUser(usernameInput, emailInput, passwordInput, firstNameInput, lastNameInput, roleInput)">Add user</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="col-12 element">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="u in users">
+            <td>{{u.id}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.email}}</td>
+            <td>secret</td>
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.role.description}}</td>
+            <td>
+                <a href="" class="btn btn-warning">Edit</a>
+                <a href="" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

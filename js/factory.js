@@ -11,11 +11,12 @@
             var urlBasePrice = urlBase + '/api/prices';
             var urlBaseReservation = urlBase + '/api/reservations';
             var urlBaseUsers = urlBase + '/api/users';
+            var urlBaseRoles = urlBase + '/api/roles';
 
             var dataFactory = {};
 
             // CUSTOMERS
-            dataFactory.searchCustomers = function(name, surname, cardNo) {
+            dataFactory.searchCustomers = function (name, surname, cardNo) {
                 var url = urlBaseCustomers + "?search=";
 
                 if (name != null)
@@ -82,12 +83,12 @@
             };
 
             // RESERVATIONS
-            dataFactory.getReservations= function(){
+            dataFactory.getReservations = function () {
                 return $http.get(urlBaseReservation);
             };
 
-            dataFactory.getReservation = function(id){
-                return $http.get(urlBaseReservation + '/' +id);
+            dataFactory.getReservation = function (id) {
+                return $http.get(urlBaseReservation + '/' + id);
             };
 
             dataFactory.addReservation = function (reservation) {
@@ -101,10 +102,8 @@
             };
 
 
-
-
             // AVAILABILITY
-            dataFactory.getAvailability = function(since, to, roomType) {
+            dataFactory.getAvailability = function (since, to, roomType) {
                 return $http({
                     url: urlBaseRoom + '/freeByRoomType',
                     method: 'GET',
@@ -137,6 +136,40 @@
 
             dataFactory.login = function (loginDto) {
                 return $http.post(urlBaseUsers + '/login', loginDto);
+            };
+
+            // USERS
+            dataFactory.getUsers = function () {
+                return $http.get(urlBaseUsers);
+            };
+            dataFactory.getUser = function (id) {
+                return $http.get(urlBaseUsers + '/' + id);
+            };
+            dataFactory.addUser = function (user) {
+                return $http.post(urlBaseUsers, user);
+            };
+            dataFactory.editUser = function (user) {
+                return $http.post(urlBaseUsers, user);
+            };
+            dataFactory.deleteUser = function (id) {
+                return $http.delete(urlBaseUsers + '/' + id);
+            };
+
+            // ROLES
+            dataFactory.getRoles = function () {
+                return $http.get(urlBaseRoles);
+            };
+            dataFactory.getRole = function (id) {
+                return $http.get(urlBaseRoles + '/' + id);
+            };
+            dataFactory.addRole = function (role) {
+                return $http.post(urlBaseRoles, role);
+            };
+            dataFactory.editRole = function (role) {
+                return $http.post(urlBaseRoles, role);
+            };
+            dataFactory.deleteRole = function (id) {
+                return $http.delete(urlBaseRoles + '/' + id);
             };
 
 

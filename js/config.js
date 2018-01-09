@@ -99,6 +99,12 @@
                     controller: 'roomTypeCtrl'
                 };
 
+                var users = {
+                    name: 'users',
+                    url: '/users',
+                    templateUrl: 'views/users.html',
+                    controller: 'userCtrl'
+                };
 
                 $stateProvider.state(main);
                 $stateProvider.state(addCustomer);
@@ -112,6 +118,7 @@
                 $stateProvider.state(availability);
                 $stateProvider.state(prices);
                 $stateProvider.state(roomTypes);
+                $stateProvider.state(users);
 
 
 
