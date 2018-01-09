@@ -14,15 +14,15 @@
             <form>
                 <div class="form-group row">
                     <div class="col-12 col-sm-4">
-                        <label for="fromInput" class="col-2 col-form-label">From</label>
+                        <label for="fromInput" class="col-form-label">From</label>
                         <input ng-model="fromInput" class="form-control" type="date" value="2011-08-19" id="fromInput">
                     </div>
                     <div class="col-12 col-sm-4">
-                        <label for="toInput" class="col-2 col-form-label">To</label>
+                        <label for="toInput" class="col-form-label">To</label>
                         <input ng-model="toInput" class="form-control" type="date" value="2011-08-19" id="toInput">
                     </div>
-                    <div class="col-12 col-md-4">
-                        <label for="roomTypeSearchInput">Room type</label>
+                    <div class="col-12 col-sm-4">
+                        <label for="roomTypeSearchInput" class="col-form-label">Room type</label>
                         <select class="form-control" id="roomTypeSearchInput" placeholder="Room type">
                             <option ng-repeat="type in roomTypes">{{type.name}}</option>
                         </select>

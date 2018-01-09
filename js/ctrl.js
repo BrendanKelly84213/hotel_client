@@ -10,9 +10,9 @@
 
     app.controller('ctrl', ctrl);
 
-    ctrl.$inject = ['$scope', '$state', '$timeout'];
+    ctrl.$inject = ['$scope', '$state', '$timeout', '$location', '$window'];
 
-    function ctrl($scope, $state, $timeout) {
+    function ctrl($scope, $state, $timeout, $location, $window ) {
         redirectIfLoggedOut();
         $scope.welcomeMsg = 'Welcome to hotel app. Use the menu above to nagivate.';
         $(function () {
@@ -20,23 +20,38 @@
         });
 
         function redirectIfLoggedOut() {
-            if (!(typeof $scope.loggedUser !== 'undefined')){
-                console.log('jestes niezalogowany');
+            console.log('sprawdzam czy zalogowany');
+            var username = $window.localStorage.getItem('user');
+            if (typeof username === 'undefined' || username === null){
                 $timeout(function(){
-                    $state.go('login')
+                    console.log('wypad');
+                    $scope.logout();
                 });
+                return false;
+            }
+            else if($location.path() != "/login") {
+                console.log('zalogowany jako ' + username);
+                $scope.isLoggedIn = true;
+                return true;
             }
         }
 
 
-        $scope.isLogged = function () {
-            return typeof $scope.loggedUser !== 'undefined';
+        $scope.isLoggedIn = function () {
+            console.log($window.localStorage.getItem('user'));
+            return redirectIfLoggedOut();
         };
 
         $scope.logout = function () {
-            $scope.loggedUser = undefined;
+            $window.localStorage.removeItem('user');
+            $scope.isLoggedIn = false;
             $state.go('login');
-        }
+        };
+
+        //checks if user is logged in on url change
+        $(window).on('hashchange', function(e){
+            redirectIfLoggedOut();
+        });
     }
 
 })();

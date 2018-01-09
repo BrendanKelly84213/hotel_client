@@ -13,6 +13,7 @@
         if ($scope.$parent.loggedUser === undefined) {
             $location.path("/login");
         }
+
     }
 
 })();

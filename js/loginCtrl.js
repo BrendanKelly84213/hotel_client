@@ -6,9 +6,9 @@
 
     app.controller('loginCtrl', loginCtrl);
 
-    loginCtrl.$inject = ['$scope', 'dataFactory', '$location'];
+    loginCtrl.$inject = ['$scope', 'dataFactory', '$state', '$window'];
 
-    function loginCtrl($scope, dataFactory, $location) {
+    function loginCtrl($scope, dataFactory, $state, $window) {
 
         $scope.login = function () {
             var loginDto = {
@@ -18,15 +18,12 @@
 
             dataFactory.login(loginDto)
                 .then(function (response) {
-                    $scope.message = "User " + login + " logged in successfully!";
-                    $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
-                    $('#modal').modal('show');
-                    $location.path('/main');
-                    $scope.$parent.loggedUser = response.data;
+                    $window.localStorage.setItem('user', loginDto.username);
+                    console.log('zalogowano jako ' + $window.localStorage.getItem('user'));
+                    $scope.$parent.isLoggedIn = true;
+                    $state.go('main');
                 }, function (error) {
-                    $scope.message = ("Error - wrong login and password!");
-                    $('#modalHeader').addClass('bg-danger').removeClass('bg-success');
-                    $('#modal').modal('show');
+
                 });
         }
 
