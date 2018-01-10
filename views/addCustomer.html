@@ -32,10 +32,10 @@
             <div class="col-6 col-md-4">
                 <div class="btn-group pt-3 mt-3" data-toggle="buttons">
                     <label class="btn btn-info active">
-                        <input type="radio" name="options" ng-model="idCardType" value="PASSPORT" autocomplete="off" checked>Passport
+                        <input type="radio" name="options" id="passportType" value="PASSPORT" autocomplete="off" checked>Passport
                     </label>
                     <label class="btn btn-info">
-                        <input type="radio" name="options" ng-model="idCardType" value="ID_CARD" autocomplete="off" >ID card
+                        <input type="radio" name="options" id="idCardType" value="ID_CARD" autocomplete="off" >ID card
                     </label>
                 </div>
             </div>
@@ -44,7 +44,7 @@
         <div class="form-group row">
             <div class="col-6 col-md-4">
                 <label id="" for="idCardExpiring" class="col-form-label">ID expiration date</label>
-                <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExpiring">
+                <input class="form-control" type="date" id="idCardExpiring" ng-model="idCardExpiring">
             </div>
             <div class="col-6 col-md-4">
                 <label for="dateOfBirth" class="col-form-label">Date of birth</label>

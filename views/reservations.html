@@ -33,7 +33,6 @@
     <table class="table">
         <thead>
         <tr>
-            <th>id</th>
             <th>Customer</th>
             <th>Since</th>
             <th>To</th>
@@ -43,10 +42,9 @@
         </thead>
         <tbody>
         <tr ng-repeat="r in reservations">
-            <th>{{r.id}}</th>
-            <th>{{r.customer.firstName}} {{r.customer.lastName}}</th>
-            <td>{{r.since}}</td>
-            <td>{{r.to}}</td>
+            <td>{{r.customer.firstName}} {{r.customer.lastName}}</td>
+            <td>{{r.since | date}}</td>
+            <td>{{r.upTo | date}}</td>
             <td>
                 {{r.room.number}}
             </td>

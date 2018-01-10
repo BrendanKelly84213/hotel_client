@@ -26,10 +26,24 @@
                     name: 'addReservation',
                     url: '/addReservation',
                     params: {
-                        id: null,
-                        from: null,
-                        to: null,
-                        totalPrice: null
+                        newReservationData: {
+                            id: null,
+                            roomName: null,
+                            from: null,
+                            to: null,
+                            totalPrice: null
+                        },
+                        newCustomer: {
+                            firstName : null,
+                            lastName : null,
+                            pesel: null,
+                            birthday : null,
+                            identityCard: {
+                                number : null,
+                                expiringDate : null,
+                                type: null
+                            }
+                        }
                     },
                     templateUrl: 'views/addReservation.html',
                     controller: 'addReservationCtrl'
