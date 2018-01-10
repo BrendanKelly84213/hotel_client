@@ -19,13 +19,13 @@
             dataFactory.login(loginDto)
                 .then(function (response) {
                     $window.localStorage.setItem('user', loginDto.username);
+                    $window.localStorage.setItem('roleName', response.data.role.name);
                     console.log('zalogowano jako ' + $window.localStorage.getItem('user'));
                     $scope.$parent.isLoggedIn = true;
                     $state.go('main');
                 }, function (error) {
-
                 });
-        }
+        };
 
     }
 

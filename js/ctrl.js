@@ -3,16 +3,16 @@
 
     var app = angular
         .module('app', ['ui.router',
-                        'ui.bootstrap',
-                        'ngAnimate'
-                        ]);
+            'ui.bootstrap',
+            'ngAnimate'
+        ]);
 
 
     app.controller('ctrl', ctrl);
 
     ctrl.$inject = ['$scope', '$state', '$timeout', '$location', '$window'];
 
-    function ctrl($scope, $state, $timeout, $location, $window ) {
+    function ctrl($scope, $state, $timeout, $location, $window) {
         redirectIfLoggedOut();
         $scope.welcomeMsg = 'Welcome to hotel app. Use the menu above to nagivate.';
         $(function () {
@@ -48,9 +48,20 @@
         };
 
         //checks if user is logged in on url change
-        $(window).on('hashchange', function(e){
+        $(window).on('hashchange', function (e) {
             redirectIfLoggedOut();
         });
+
+        $scope.isAdministrator = function () {
+            return $window.localStorage.getItem('roleName') === 'ROLE_ADMINISTRATOR';
+        };
+
+        $scope.showManagement = function () {
+            console.log('dadadad11;');
+            return $window.localStorage.getItem('roleName') === 'ROLE_ADMINISTRATOR' ||
+                $window.localStorage.getItem('roleName') === 'ROLE_MANAGER';
+        };
+
     }
 
 })();
