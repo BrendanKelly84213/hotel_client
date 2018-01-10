@@ -19,6 +19,7 @@
         function getReservations() {
             dataFactory.getReservations()
                 .then(function (response) {
+                    console.log(response.data);
                     $scope.reservations = response.data;
                 }, function (error) {
                     console.log('Unable to get reservations');

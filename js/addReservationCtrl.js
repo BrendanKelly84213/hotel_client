@@ -14,30 +14,31 @@
         $scope.newCustomer = $state.params.newCustomer;
 
         $scope.addNewReservation = function () {
-            var customerId = null;
             dataFactory.addCustomer($scope.newCustomer)
                 .then(function (response) {
                     console.log('dodajemy klienta');
-                    console.log(response.data);
-                    customerId = response.data.id;
+                    console.log(response.data.id);
+                    var customerId = response.data.id;
+
+                    var reservationDto = {
+                        since: $scope.newReservationData.from,
+                        upTo: $scope.newReservationData.to,
+                        room: {
+                            id: $scope.newReservationData.id
+                        },
+                        customer: {
+                            id: customerId
+                        }
+                    };
+
+                    dataFactory.addReservation(reservationDto)
+                        .then(function (response) {
+                            $state.go('reservations');
+                        })
                 }, function (error) {
                     console.log("Unable to add customer");
                 });
-            var reservationDto = {
-                since: $scope.newReservationData.from,
-                upTo: $scope.newReservationData.to,
-                room: {
-                    id: $scope.newReservationData.id
-                },
-                customer: {
-                    id: customerId
-                }
-            };
 
-            dataFactory.addReservation(reservationDto)
-                .then(function (response) {
-                    console.log('rezerwacja dodana');
-                })
         };
     }
 
