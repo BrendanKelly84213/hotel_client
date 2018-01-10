@@ -9,7 +9,7 @@
             var urlBaseRoom = urlBase + '/api/rooms';
             var urlBaseRoomTypes = urlBase + '/api/roomTypes';
             var urlBasePrice = urlBase + '/api/prices';
-            var urlBaseReservation = urlBase + '/api/reservations';
+            var urlBaseReservation = urlBase + '/api/reservedRooms';
             var urlBaseUsers = urlBase + '/api/users';
             var urlBaseRoles = urlBase + '/api/roles';
 
@@ -86,11 +86,9 @@
             dataFactory.getReservations = function () {
                 return $http.get(urlBaseReservation);
             };
-
             dataFactory.getReservation = function (id) {
                 return $http.get(urlBaseReservation + '/' + id);
             };
-
             dataFactory.addReservation = function (reservation) {
                 return $http.post(urlBaseReservation, reservation);
             };
@@ -99,6 +97,9 @@
             };
             dataFactory.deleteReservation = function (id) {
                 return $http.delete(urlBaseReservation + '/' + id);
+            };
+            dataFactory.searchReservations = function (since, to) {
+                return $http.get(urlBaseReservation + '/betweenTwoDates?' + 'since=' + since + '&to=' + to);
             };
 
 

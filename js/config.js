@@ -64,7 +64,8 @@
                 var reservations = {
                     name: 'reservations',
                     url: '/reservations',
-                    templateUrl: 'views/reservations.html'
+                    templateUrl: 'views/reservations.html',
+                    controller: 'reservationCtrl'
                 };
 
                 var availability = {
