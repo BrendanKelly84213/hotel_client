@@ -99,7 +99,7 @@
                 return $http.delete(urlBaseReservation + '/' + id);
             };
             dataFactory.searchReservations = function (since, to) {
-                return $http.get(urlBaseReservation + '/betweenTwoDates?' + 'since=' + since + '&to=' + to);
+                return $http.get(urlBaseReservation + '/betweenTwoDates' + '?since=' + since + '&to=' + to);
             };
 
 
@@ -154,6 +154,15 @@
             };
             dataFactory.deleteUser = function (id) {
                 return $http.delete(urlBaseUsers + '/' + id);
+            };
+            dataFactory.searchUsers = function (username, roleName) {
+                if(username === undefined) {
+                    username = "";
+                }
+                if(roleName === undefined) {
+                    roleName = "";
+                }
+                return $http.get(urlBaseUsers + '/byUsernameAndRole' + '?username=' + username + '&roleName=' + roleName);
             };
 
             // ROLES

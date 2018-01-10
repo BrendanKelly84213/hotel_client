@@ -66,6 +66,15 @@
                 });
         };
 
+        $scope.searchUsers = function () {
+            dataFactory.searchUsers($scope.usernameSearchInput, $scope.roleSearchInput)
+                .then(function (response) {
+                    $scope.users = response.data;
+                }, function (error) {
+                    console.log('Unable to get users!');
+                })
+        }
+
     }
 
 })();
