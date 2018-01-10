@@ -1,47 +1,55 @@
-<form>
+<div class="col-12">
 
-    <p>Reservation for: {{data.name}} {{data.surname}}</p>
+        <p>Reservation for: {{data.name}} {{data.surname}}</p>
 
-    <div class="form-group row">
-        <label for="since" class="col-10 col-form-label">Since</label>
-        <div class="col-10">
-            <input class="form-control" type="date" value="2011-08-19" id="since">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="upTo" class="col-10 col-form-label">Up To</label>
-        <div class="col-10">
-            <input class="form-control" type="date" value="2011-08-19" id="upTo">
-        </div>
-    </div>
+        <form>
+            <!--Customer-->
+            <div class="form-group">
+                <label for="name" class="col-10 col-form-label">First name</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" placeholder="First Name" id="name" ng-model="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="surname" class="col-10 col-form-label">Surname</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" placeholder="Surname" id="surname" ng-model="surname">
+                </div>
+            </div>
+            <!--
+            <div class="form-group">
+                <label for="phoneNumber" class="col-10 col-form-label">Phone number</label>
+                <div class="col-10">
+                    <input class="form-control" type="tel" placeholder="Phone number" id="phoneNumber" ng-model="phoneNumber">
+                </div>
+            </div>
+            -->
+            <div class="form-group">
+                <label for="birthday" class="col-10 col-form-label">Birthday</label>
+                <div class="col-10">
+                    <input class="form-control" type="date" id="birthday" ng-model="dateOfBirth">
+                </div>
+            </div>
+            <!--ID-->
+            <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
+                <option value="ID_CARD">ID Card</option>
+                <option value="PASSPORT">Passport</option>
+            </select>
 
-    <div class="form-group">
-        <label for="customers">Customers</label>
-        <select class="form-control"
-                ng-model="selected.available"
-                ng-options="c.name + ' ' +c.surname for c in customers"
-                id="customers"
-                multiple
-                size="5"></select>
+            <div class="form-group">
+                <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
+                <div class="col-10">
+                    <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
+                </div>
+            </div>
 
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="rooms">Rooms</label>
-        <select class="form-control"
-                ng-model="selected.available"
-                ng-options="'Room ' +c.number for c in rooms"
-                id="rooms"
-                multiple
-                disabled
-                size="5"></select>
-
-        </select>
-    </div>
-
-    <label for="price">Price</label>
-    <input class="form-control" id="price" type="text" value="54 PLN" readonly>
-
-    <button type="submit" class="btn btn-primary">Submit reservation</button>
-</form>
+            <button type="submit" class="btn btn-primary" ng-click="addCustomer()"> Add customer</button>
+        </form>
+</div>

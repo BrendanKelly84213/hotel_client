@@ -20,17 +20,16 @@
         });
 
         function redirectIfLoggedOut() {
-            console.log('sprawdzam czy zalogowany');
+            //console.log('sprawdzam czy zalogowany');
             var username = $window.localStorage.getItem('user');
             if (typeof username === 'undefined' || username === null){
                 $timeout(function(){
-                    console.log('wypad');
                     $scope.logout();
                 });
                 return false;
             }
             else if($location.path() != "/login") {
-                console.log('zalogowany jako ' + username);
+                //console.log('zalogowany jako ' + username);
                 $scope.isLoggedIn = true;
                 return true;
             }

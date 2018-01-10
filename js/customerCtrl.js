@@ -15,11 +15,6 @@
             console.log("odswiezanko");
             this.customers = getCustomers();
         };
-
-        $scope.addReservation = function (id, firstName, lastName) {
-            console.log(id, firstName, lastName);
-            $state.go('addReservation', { id: id, firstName: firstName, lastName: lastName});
-        };
         
         $scope.searchCustomer = function (name, surname, cardNo) {
             dataFactory.searchCustomers(name, surname, cardNo)
@@ -39,27 +34,6 @@
                 })
         }
 
-        $scope.addCustomer = function () {
-            var customer = {
-                "firstName" : $scope.name,
-                "lastName" : $scope.surname,
-                "birthday" : $scope.dateOfBirth,
-                "identityCard": {
-                    "number" : $scope.idCardNumber,
-                    "dateExpiring" : new Date($scope.idCardExp).getMonth(),
-                }
-            };
-
-            dataFactory.addCustomer(customer)
-                .then(function (response) {
-                    if (response.data != null) {
-                        $scope.message = "Room type added successfully!"
-                    }
-                }, function (error) {
-                    console.log("Unable to add customer");
-                });
-
-        };
     }
 
 })();

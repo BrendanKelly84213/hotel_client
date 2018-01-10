@@ -1,53 +1,63 @@
 <div class="col-12">
+    <div class="alert alert-danger" role="alert" ng-show="customerError">
+        Could not add customer
+    </div>
+    <div class="alert alert-info show" role="alert">
+        <p>Room name: {{data.roomName}}</p>
+        <p>Reservation period: {{data.from}} - {{data.to}}</p>
+        <p>Reservation price: {{data.totalPrice}}</p>
+    </div>
+
     <form>
-        <!--ID-->
-        <label class="mr-sm-10" for="idCardType">Identity Card Type</label>
-        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="idCardType" ng-model="idCardType">
-            <option value="ID_CARD">ID Card</option>
-            <option value="PASSPORT">Passport</option>
-        </select>
-        <div class="form-group">
-            <label for="idCardNumber" class="col-10 col-form-label">Id Card Number</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="Id Card Number" id="idCardNumber" ng-model="idCardNumber">
+        <div class="form-group row">
+            <div class="col-4">
+                <label for="firstNameInput" class="col-form-label">First name</label>
+                <input class="form-control" id="firstNameInput" ng-model="firstNameInput" type="text" placeholder="First Name">
             </div>
-        </div>
-        <div class="form-group">
-            <label for="idCardExpiring" class="col-10 col-form-label">Id Card Expiring</label>
-            <div class="col-10">
-                <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExp">
+            <div class="col-4">
+                <label for="lastNameInput" class="col-form-label">Last Name</label>
+                <input class="form-control" id="lastNameInput" ng-model="lastNameInput" type="text" placeholder="Last Name">
+            </div>
+            <div class="col-4">
+                <label for="peselInput" class="col-form-label">PESEL</label>
+                <input class="form-control" id="peselInput" ng-model="peselInput" type="text" placeholder="PESEL">
             </div>
         </div>
 
-        <!--Customer-->
-        <div class="form-group">
-            <label for="name" class="col-10 col-form-label">First name</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="First Name" id="name" ng-model="name">
+        <div class="form-group row">
+            <div class="col-6 col-md-4">
+                <label for="idCardNumber">Identity document number</label>
+                <input class="form-control" ng-model="idCardNumber" type="text" id="idCardNumber" placeholder="ID number">
             </div>
-        </div>
-        <div class="form-group">
-            <label for="surname" class="col-10 col-form-label">Surname</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="Surname" id="surname" ng-model="surname">
-            </div>
-        </div>
-        <!--
-        <div class="form-group">
-            <label for="phoneNumber" class="col-10 col-form-label">Phone number</label>
-            <div class="col-10">
-                <input class="form-control" type="tel" placeholder="Phone number" id="phoneNumber" ng-model="phoneNumber">
-            </div>
-        </div>
-        -->
-        <div class="form-group">
-            <label for="birthday" class="col-10 col-form-label">Birthday</label>
-            <div class="col-10">
-                <input class="form-control" type="date" id="birthday" ng-model="dateOfBirth">
+            <div class="col-6 col-md-4">
+                <div class="btn-group pt-3 mt-3" data-toggle="buttons">
+                    <label class="btn btn-info active">
+                        <input type="radio" name="options" ng-model="idCardType" value="PASSPORT" autocomplete="off" checked>Passport
+                    </label>
+                    <label class="btn btn-info">
+                        <input type="radio" name="options" ng-model="idCardType" value="ID_CARD" autocomplete="off" >ID card
+                    </label>
+                </div>
             </div>
         </div>
 
+        <div class="form-group row">
+            <div class="col-6 col-md-4">
+                <label id="" for="idCardExpiring" class="col-form-label">ID expiration date</label>
+                <input class="form-control" type="month" id="idCardExpiring" ng-model="idCardExpiring">
+            </div>
+            <div class="col-6 col-md-4">
+                <label for="dateOfBirth" class="col-form-label">Date of birth</label>
+                <input class="form-control" type="date" id="dateOfBirth" ng-model="dateOfBirth">
+            </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary" ng-click="addCustomer()"> Add customer</button>
+        <div class="form-group row">
+            <div class="col-12">
+                <a href class="btn btn-success" ng-click="addCustomer()">Next</a>
+            </div>
+        </div>
     </form>
+
+
 </div>

@@ -16,13 +16,6 @@
                     controller: 'mainCtrl'
                 };
 
-                var addCustomer = {
-                    name: 'addCustomer',
-                    url: '/addCustomer',
-                    templateUrl: 'views/addCustomer.html',
-                    controller: 'customerCtrl'
-                };
-
                 var addPayment = {
                     name: 'addPayment',
                     url: '/addPayment',
@@ -35,10 +28,11 @@
                     params: {
                         id: null,
                         from: null,
-                        to: null
+                        to: null,
+                        totalPrice: null
                     },
                     templateUrl: 'views/addReservation.html',
-                    controller: 'newReservationCtrl'
+                    controller: 'addReservationCtrl'
                 };
 
                 var customers = {
@@ -107,6 +101,22 @@
                     controller: 'userCtrl'
                 };
 
+                var addCustomer = {
+                    name: 'addCustomer',
+                    url: '/addCustomer',
+                    params: {
+                        newReservationData: {
+                            id: null,
+                            roomName: null,
+                            from: null,
+                            to: null,
+                            totalPrice: null
+                        }
+                    },
+                    templateUrl: 'views/addCustomer.html',
+                    controller: 'addCustomerCtrl'
+                };
+
                 $stateProvider.state(main);
                 $stateProvider.state(addCustomer);
                 $stateProvider.state(addPayment);
@@ -120,8 +130,6 @@
                 $stateProvider.state(prices);
                 $stateProvider.state(roomTypes);
                 $stateProvider.state(users);
-
-
 
             }]);
 })();

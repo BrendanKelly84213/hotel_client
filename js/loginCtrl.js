@@ -21,6 +21,7 @@
                     $window.localStorage.setItem('user', loginDto.username);
                     console.log('zalogowano jako ' + $window.localStorage.getItem('user'));
                     $scope.$parent.isLoggedIn = true;
+                    $scope.$parent.is
                     $state.go('main');
                 }, function (error) {
 
