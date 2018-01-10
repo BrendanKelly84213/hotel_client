@@ -20,10 +20,9 @@
                 "name": name,
                 "description": description
             };
-            console.log(roomType);
-
             dataFactory.addRoomType(roomType)
                 .then(function (response) {
+                    getRoomTypes();
                     $scope.message = "Room type added.";
                     $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
                     $('#modal').modal('show');
@@ -50,9 +49,10 @@
         }
 
 
-        $scope.removeRoomType = function (id) {
-            dataFactory.deleteRoomType(id)
+        $scope.removeRoomType = function (type) {
+            dataFactory.deleteRoomType(type.id)
                 .then(function (response) {
+                    getRoomTypes();
                     $scope.message = "Room type removed successfully";
                     $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
                     $('#modalRoomType').modal('show');

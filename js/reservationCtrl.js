@@ -33,7 +33,14 @@
                 }, function (error) {
                     console.log('Unable to get reservations');
                 })
+        };
 
+        $scope.deleteReservation = function (reservation) {
+            dataFactory.deleteReservation(reservation.id)
+                .then(function (response) {
+                    getReservations();
+                }, function (error) {
+                })
         }
 
     }

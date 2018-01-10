@@ -53,6 +53,7 @@
             console.log(room);
             dataFactory.addRoom(room)
                 .then(function (response) {
+                    getRooms();
                     $scope.message = "Room added successfully.";
                     $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
                     $('#modal').modal('show');
@@ -68,6 +69,14 @@
                 });
         };
 
+        $scope.deleteRoom = function (item) {
+            dataFactory.deleteRoom(item.id)
+                .then(function (response) {
+                    getRooms();
+                }, function (error) {
+                    console.log('Unable to delete room!');
+                })
+        };
 
         $('#searchBtn').click(function () {
             if($('#addRoom').hasClass('show'))

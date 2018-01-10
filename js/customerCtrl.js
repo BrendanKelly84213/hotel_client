@@ -34,6 +34,15 @@
                 })
         }
 
+        $scope.deleteCustomer = function (item) {
+            dataFactory.deleteCustomer(item.id)
+                .then(function (response) {
+                    var index = $scope.customers.indexOf(item);
+                    $scope.customers.splice(index, 1);
+                }, function (error) {
+                    console.log('Unable to delete customer!');
+                })
+        }
     }
 
 })();

@@ -49,6 +49,7 @@
             dataFactory.addUser(user)
                 .then(function (response) {
                     if (response.data !== null) {
+                        $scope.users.push(response.data);
                         $scope.message = "User added successfully!";
                         $('#modalHeader').addClass('bg-success').removeClass('bg-danger');
                         $('#modal').modal('show');
