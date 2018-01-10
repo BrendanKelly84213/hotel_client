@@ -57,7 +57,8 @@
         };
 
         $scope.showManagement = function () {
-            console.log('dadadad11;');
+            console.log($window.localStorage.getItem('roleName') === 'ROLE_ADMINISTRATOR' ||
+                $window.localStorage.getItem('roleName') === 'ROLE_MANAGER');
             return $window.localStorage.getItem('roleName') === 'ROLE_ADMINISTRATOR' ||
                 $window.localStorage.getItem('roleName') === 'ROLE_MANAGER';
         };

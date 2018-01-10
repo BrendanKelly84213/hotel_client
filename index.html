@@ -67,12 +67,12 @@
                         reservations
                     </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" ng-show="showManagement()">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false" href>
                         management
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ng-show="showManagement">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"">
                         <a class="dropdown-item" ui-sref="users" ui-sref-active="active">users</a>
                         <a class="dropdown-item" ui-sref="roomTypes" ui-sref-active="active">room types</a>
                         <a class="dropdown-item" ui-sref="rooms" ui-sref-active="active">rooms</a>
